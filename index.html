@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NÓRDI — Relojes con carácter | Tienda Oficial</title>
+  <meta name="description" content="NÓRDI es una tienda virtual de relojería minimalista y contemporánea. Descubre colecciones de relojes clásicos, deportivos, minimalistas y elegantes con envío asegurado a toda Colombia." />
+  
+  <!-- Favicon SVG con monograma NÓRDI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2320231F'/><text x='50' y='64' font-family='serif' font-size='42' fill='%23B98B55' text-anchor='middle' font-weight='bold'>N</text></svg>" />
+
+  <!-- Tipografías de alta gama (Playfair Display + Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Hoja de estilos del proyecto -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. BARRA SUPERIOR CON MENSAJE COMERCIAL
+       ====================================================================== -->
+  <div class="announcement-bar" role="region" aria-label="Aviso comercial">
+    <span>Envíos asegurados a toda Colombia &bull; Garantía oficial de 2 años &bull; <strong class="highlight">Edición Limitada 2026</strong></span>
+  </div>
+
+  <!-- ======================================================================
+       2. ENCABEZADO Y NAVEGACIÓN PRINCIPAL
+       ====================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      
+      <!-- Logotipo de la marca -->
+      <a href="#inicio" class="brand-logo" aria-label="NÓRDI Relojes - Ir a Inicio">
+        <span class="logo-main">NÓRDI</span>
+        <span class="logo-sub">HORLOGERIE</span>
+      </a>
+
+      <!-- Menú de navegación -->
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="#inicio" class="nav-link is-active">Inicio</a>
+        <a href="#catalogo" class="nav-link">Catálogo</a>
+        <a href="#beneficios" class="nav-link">Garantía</a>
+        <a href="#nosotros" class="nav-link">Nuestra Esencia</a>
+        <a href="#novedades" class="nav-link">Novedades</a>
+      </nav>
+
+      <!-- Botones de acción del encabezado -->
+      <div class="header-actions">
+        <!-- Botón de Favoritos -->
+        <button type="button" class="action-btn" id="favToggleBtn" aria-label="Ver piezas favoritas" title="Mis Favoritos">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+          <span class="badge-counter hidden" id="favCountBadge" aria-live="polite">0</span>
+        </button>
+
+        <!-- Botón de Carrito de Compras -->
+        <button type="button" class="action-btn" id="cartToggleBtn" aria-label="Abrir carrito de compras" title="Carrito de compras">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+            <path d="M3 6h18"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="badge-counter hidden" id="cartCountBadge" aria-live="polite">0</span>
+        </button>
+
+        <!-- Botón hamburguesa móvil -->
+        <button type="button" class="action-btn menu-toggle" id="menuToggleBtn" aria-label="Abrir menú de navegación">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         3. SECCIÓN HERO (PORTADA PRINCIPAL)
+         ==================================================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="container hero-grid">
+        
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            Colección 2026 &bull; Relojería con Carácter
+          </div>
+          <h1 class="hero-title">
+            El tiempo trasciende la <em>forma</em>.
+          </h1>
+          <p class="hero-description">
+            Piezas de relojería concebidas bajo la sobriedad escandinava y la precisión contemporánea. Materiales nobles, líneas depuradas y acabados meticulosos diseñados para acompañar tus mejores momentos.
+          </p>
+          <div class="hero-actions">
+            <a href="#catalogo" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              Explorar Colección
+            </a>
+            <a href="#nosotros" class="btn btn-secondary">
+              Conocer NÓRDI
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-floating-badge">Pieza Insignia</div>
+            <div class="hero-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=80" 
+                alt="Reloj NÓRDI pieza insignia en acero y cuero blanco" 
+                loading="eager" 
+              />
+            </div>
+            <div class="hero-card-meta">
+              <div>
+                <h3 class="hero-card-title">NÓRDI Pure Chrono</h3>
+                <span class="hero-card-subtitle">Minimalista &bull; Edición 2026</span>
+              </div>
+              <div class="hero-card-price">$ 1.250.000</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. BLOQUE DE BENEFICIOS Y GARANTÍAS
+         ==================================================================== -->
+    <section class="benefits-section" id="beneficios" aria-label="Garantías y beneficios">
+      <div class="container">
+        <div class="benefits-grid">
+          
+          <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19"/>
+                <path d="M23 13v-2"/>
+                <circle cx="7" cy="18" r="2"/>
+                <circle cx="17" cy="18" r="2"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">Envío Asegurado</h3>
+              <p class="benefit-desc">Despacho nacional gratuito y asegurado a las principales ciudades de Colombia.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">Garantía Oficial de 2 Años</h3>
+              <p class="benefit-desc">Cobertura técnica integral en mecanismo, empaques y componentes de manufactura.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m4.93 4.93 4.24 4.24"/>
+                <path d="m14.83 9.17 4.24-4.24"/>
+                <path d="m14.83 14.83 4.24 4.24"/>
+                <path d="m9.17 14.83-4.24 4.24"/>
+                <circle cx="12" cy="12" r="4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">Maquinaria de Precisión</h3>
+              <p class="benefit-desc">Calibres certificados de alta precisión con riguroso control de calidad antes del despacho.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">Atención Personalizada</h3>
+              <p class="benefit-desc">Asesoría técnica y estilística de nuestro equipo para elegir la pieza idónea para ti.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. CATÁLOGO DE PRODUCTOS (BÚSQUEDA, FILTROS Y ORDENAMIENTO)
+         ==================================================================== -->
+    <section class="catalog-section" id="catalogo">
+      <div class="container">
+        
+        <header class="section-header">
+          <span class="section-tag">Catálogo Exclusivo</span>
+          <h2 class="section-title">Nuestra Colección de Relojes</h2>
+          <p class="section-subtitle">
+            Explora piezas seleccionadas por su equilibrio estético, solidez mecánica y distinción atemporal.
+          </p>
+        </header>
+
+        <!-- Barra de herramientas: Búsqueda, Orden y Filtros -->
+        <div class="catalog-toolbar" role="search" aria-label="Filtrar catálogo de relojes">
+          
+          <div class="toolbar-primary">
+            <!-- Campo de búsqueda -->
+            <div class="search-wrapper">
+              <span class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" x2="16.65" y1="21" y2="16.65"/>
+                </svg>
+              </span>
+              <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="Buscar por nombre, categoría o detalle..." 
+                aria-label="Buscar productos"
+                autocomplete="off"
+              />
+              <button type="button" class="clear-search-btn" id="clearSearchBtn" aria-label="Limpiar búsqueda" title="Limpiar búsqueda">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" x2="6" y1="6" y2="18"/>
+                  <line x1="6" x2="18" y1="6" y2="18"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Selector de ordenamiento -->
+            <div class="sort-wrapper">
+              <label for="sortSelect" class="sort-label">Ordenar por:</label>
+              <select id="sortSelect" class="sort-select" aria-label="Criterio de ordenación">
+                <option value="default">Recomendados / Destacados</option>
+                <option value="price-asc">Precio: de menor a mayor</option>
+                <option value="price-desc">Precio: de mayor a menor</option>
+                <option value="name-asc">Nombre: A – Z</option>
+                <option value="name-desc">Nombre: Z – A</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Filtro de Categorías -->
+          <div class="category-filters" role="group" aria-label="Filtrar por categoría">
+            <button type="button" class="filter-btn is-active" data-category="Todos">Todos</button>
+            <button type="button" class="filter-btn" data-category="Clásicos">Clásicos</button>
+            <button type="button" class="filter-btn" data-category="Deportivos">Deportivos</button>
+            <button type="button" class="filter-btn" data-category="Minimalistas">Minimalistas</button>
+            <button type="button" class="filter-btn" data-category="Elegantes">Elegantes</button>
+          </div>
+
+        </div>
+
+        <!-- Indicador de resultados activos -->
+        <div class="results-info-bar">
+          <span class="results-count" id="resultsCount">Cargando modelos...</span>
+          <span class="active-filter-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+            </svg>
+            Vista en Vivo
+          </span>
+        </div>
+
+        <!-- Cuadrícula interactiva de productos -->
+        <div class="products-grid" id="productsGrid" aria-live="polite">
+          <!-- Renderizado dinámicamente mediante renderProducts() en app.js -->
+        </div>
+
+        <!-- Estado vacío cuando no hay resultados de búsqueda -->
+        <div class="catalog-empty" id="catalogEmpty">
+          <div class="empty-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" x2="16.65" y1="21" y2="16.65"/>
+              <line x1="8" x2="14" y1="11" y2="11"/>
+            </svg>
+          </div>
+          <h3 class="empty-title">No se encontraron relojes</h3>
+          <p class="empty-text">No existen piezas que coincidan con los criterios de búsqueda o categoría seleccionados.</p>
+          <button type="button" class="btn btn-secondary" id="resetFiltersBtn">
+            Restablecer todos los filtros
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. SECCIÓN EDITORIAL / NUESTRA ESENCIA
+         ==================================================================== -->
+    <section class="editorial-section" id="nosotros">
+      <div class="container editorial-grid">
+        
+        <div class="editorial-visual">
+          <div class="editorial-img-box">
+            <img 
+              src="https://images.unsplash.com/photo-1585123334904-845d60e97b29?auto=format&fit=crop&w=1000&q=80" 
+              alt="Mesa de trabajo y ensamblaje de reloj de alta precisión NÓRDI" 
+              loading="lazy"
+            />
+          </div>
+          <div class="editorial-badge">
+            <div class="editorial-badge-number">100%</div>
+            <div class="editorial-badge-text">Precisión cronométrica y pasión por el diseño sobrio.</div>
+          </div>
+        </div>
+
+        <div class="editorial-content">
+          <span class="section-tag">Manifiesto de Marca</span>
+          <blockquote class="editorial-quote">
+            "No diseñamos objetos para medir las horas que pasan, sino para conmemorar los instantes que dejan huella."
+          </blockquote>
+          <p class="editorial-body">
+            En <strong>NÓRDI</strong> creemos que un reloj es mucho más que un instrumento: es una declaración de intenciones. Inspirados en los principios del diseño nórdico —funcionalismo, elegancia sin estridencias y longevidad— cada pieza nace del diálogo entre la ingeniería relojera y el buen gusto estético.
+          </p>
+          <p class="editorial-body">
+            Trabajamos exclusivamente con aceros quirúrgicos 316L, cristales de zafiro de alta dureza y calibres sometidos a rigurosas calibraciones de exactitud, garantizando que tu reloj te acompañe generación tras generación.
+          </p>
+
+          <div class="editorial-pillars">
+            <div class="pillar-item">
+              <h4>Cristal de Zafiro</h4>
+              <p>Tratamiento antirreflejo doble con dureza 9 en la escala de Mohs.</p>
+            </div>
+            <div class="pillar-item">
+              <h4>Acero Quirúrgico 316L</h4>
+              <p>Resistente a la corrosión marina, hipoalergénico y pulido artesanal.</p>
+            </div>
+            <div class="pillar-item">
+              <h4>Calibres Contrastados</h4>
+              <p>Mecanismos mecánicos y de cuarzo seleccionados por su fiabilidad.</p>
+            </div>
+            <div class="pillar-item">
+              <h4>Sello Ético</h4>
+              <p>Correas de cuero curtido vegetal y procesos de manufactura responsable.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. FORMULARIO DE NOVEDADES (NEWSLETTER)
+         ==================================================================== -->
+    <section class="newsletter-section" id="novedades">
+      <div class="container">
+        <div class="newsletter-box">
+          <span class="section-tag">Círculo NÓRDI</span>
+          <h2 class="newsletter-title">Acceso Exclusivo a Nuevas Ediciones</h2>
+          <p class="newsletter-subtitle">
+            Recibe en primicia nuestras series numeradas, artículos sobre cultura relojera y ofertas reservadas para miembros.
+          </p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <input 
+              type="email" 
+              class="newsletter-input" 
+              id="newsletterEmail" 
+              placeholder="Ingresa tu correo electrónico..." 
+              required 
+              aria-label="Correo electrónico para suscripción"
+            />
+            <button type="submit" class="btn btn-primary">
+              Suscribirme
+            </button>
+          </form>
+          <p class="newsletter-disclaimer">
+            Respetamos tu privacidad. No enviamos spam y puedes darte de baja en cualquier momento.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       8. PIE DE PÁGINA (FOOTER)
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Columna 1: Marca y Filosofía -->
+        <div class="footer-brand">
+          <a href="#inicio" class="brand-logo">
+            <span class="logo-main">NÓRDI</span>
+            <span class="logo-sub">HORLOGERIE</span>
+          </a>
+          <p class="footer-bio">
+            Relojes de diseño contemporáneo creados para quienes valoran la precisión, la sobriedad y la autenticidad en cada detalle.
+          </p>
+          <div class="footer-social" aria-label="Redes sociales oficiales">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Pinterest">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" x2="12" y1="8" y2="12"/>
+                <line x1="12" x2="12.01" y1="16" y2="16"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna 2: Colecciones -->
+        <div>
+          <h4 class="footer-heading">Colecciones</h4>
+          <ul class="footer-links">
+            <li><a href="#catalogo">Relojes Clásicos</a></li>
+            <li><a href="#catalogo">Relojes Deportivos</a></li>
+            <li><a href="#catalogo">Relojes Minimalistas</a></li>
+            <li><a href="#catalogo">Relojes Elegantes</a></li>
+            <li><a href="#catalogo">Ediciones Limitadas</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Información & Ayuda -->
+        <div>
+          <h4 class="footer-heading">Servicio al Cliente</h4>
+          <ul class="footer-links">
+            <li><a href="#beneficios">Garantía de 2 Años</a></li>
+            <li><a href="#beneficios">Guía de Cuidados</a></li>
+            <li><a href="#beneficios">Envíos y Entregas</a></li>
+            <li><a href="#nosotros">Nuestra Filosofía</a></li>
+            <li><a href="#inicio">Términos del Servicio</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Contacto directo -->
+        <div>
+          <h4 class="footer-heading">Contacto y Sala de Ventas</h4>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Calle 85 # 11-53, Zona Rosa, Bogotá D.C., Colombia</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            <span>soporte@nordiwatches.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>+57 (601) 390 4488</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 NÓRDI Horlogerie. Todos los derechos reservados. Prototipo de comercio electrónico frontend.</p>
+        <span class="footer-bottom-badge">Hecho con HTML5, CSS3 y Vanilla JavaScript</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       9. COMPONENTES INTERACTIVOS (DRAWER CARRITO, FAVORITOS Y MODALES)
+       ====================================================================== -->
+
+  <!-- Fondo oscuro difuminado para los paneles laterales -->
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+  <!-- PANEL LATERAL: CARRITO DE COMPRAS -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras" role="dialog" aria-modal="true">
+    <div class="drawer-header">
+      <h3 class="drawer-title">
+        <span>Tu Carrito</span>
+        <span class="drawer-count-badge" id="drawerCartCount">0 artículos</span>
+      </h3>
+      <button type="button" class="drawer-close-btn" id="cartCloseBtn" aria-label="Cerrar carrito">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" x2="6" y1="6" y2="18"/>
+          <line x1="6" x2="18" y1="6" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Lista de artículos en el carrito -->
+    <div class="cart-items-body" id="cartItemsBody">
+      <!-- Los elementos se insertan dinámicamente con renderCart() -->
+    </div>
+
+    <!-- Estado vacío del carrito -->
+    <div class="cart-empty-state" id="cartEmptyState">
+      <div class="cart-empty-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+        </svg>
+      </div>
+      <h4 class="cart-empty-title">Tu carrito está vacío</h4>
+      <p class="cart-empty-text">Aún no has agregado ninguna pieza de nuestra colección.</p>
+      <a href="#catalogo" class="btn btn-secondary" onclick="window.closeCart();">
+        Ver catálogo de relojes
+      </a>
+    </div>
+
+    <!-- Pie del carrito con resumen y botón de compra -->
+    <div class="drawer-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">$ 0 COP</strong>
+      </div>
+      <div class="cart-summary-row">
+        <span>Envío nacional</span>
+        <span class="shipping-free">Gratis</span>
+      </div>
+      <div class="cart-summary-row total-row">
+        <span>Total Estimado</span>
+        <span class="total-amount" id="cartTotal">$ 0 COP</span>
+      </div>
+      <div class="cart-demo-notice">
+        <strong>Aviso:</strong> Este es un prototipo demostrativo. No se procesarán cobros reales.
+      </div>
+      <button type="button" class="btn btn-primary btn-block" id="checkoutBtn">
+        Proceder al Pago Demo
+      </button>
+    </div>
+  </aside>
+
+  <!-- PANEL LATERAL: FAVORITOS -->
+  <aside class="favorites-drawer" id="favoritesDrawer" aria-label="Productos favoritos" role="dialog" aria-modal="true">
+    <div class="drawer-header">
+      <h3 class="drawer-title">
+        <span>Tus Favoritos</span>
+        <span class="drawer-count-badge" id="drawerFavCount">0 piezas</span>
+      </h3>
+      <button type="button" class="drawer-close-btn" id="favCloseBtn" aria-label="Cerrar favoritos">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" x2="6" y1="6" y2="18"/>
+          <line x1="6" x2="18" y1="6" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="cart-items-body" id="favItemsBody">
+      <!-- Los elementos se insertan dinámicamente -->
+    </div>
+
+    <div class="cart-empty-state" id="favEmptyState">
+      <div class="cart-empty-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+        </svg>
+      </div>
+      <h4 class="cart-empty-title">Sin favoritos guardados</h4>
+      <p class="cart-empty-text">Haz clic en el icono de corazón en cualquier reloj para guardarlo en tu lista personal.</p>
+    </div>
+  </aside>
+
+  <!-- MODAL GENERAL (showModal(title, text)) -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Información</h3>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar ventana emergente">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" x2="6" y1="6" y2="18"/>
+            <line x1="6" x2="18" y1="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Contenido inyectado dinámicamente -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="modalOkBtn">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE VISTA RÁPIDA (QUICK VIEW) -->
+  <div class="modal-overlay" id="quickViewModal" role="dialog" aria-modal="true" aria-label="Detalles rápidos del reloj">
+    <div class="modal-box quick-view-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Ficha Técnica de la Pieza</h3>
+        <button type="button" class="modal-close-btn" id="quickViewCloseBtn" aria-label="Cerrar detalles">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" x2="6" y1="6" y2="18"/>
+            <line x1="6" x2="18" y1="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" id="quickViewBody">
+        <!-- Detalles generados dinámicamente con openQuickView(id) -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENEDOR FLOTANTE DE NOTIFICACIONES (TOASTS) -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Lógica JavaScript del proyecto -->
+  <script src="js/app.js"></script>
+</body>
+</html>

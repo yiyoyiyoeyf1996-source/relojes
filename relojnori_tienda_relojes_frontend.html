@@ -1,0 +1,3880 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RelojNori — Relojes con carácter | Tienda Oficial</title>
+  <meta name="description" content="RelojNori es una tienda virtual de relojería minimalista y contemporánea. Descubre colecciones de relojes clásicos, deportivos, minimalistas y elegantes con envío asegurado a toda Colombia." />
+  
+  <!-- Favicon SVG con monograma RelojNori -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2320231F'/><text x='50' y='64' font-family='serif' font-size='36' fill='%23B98B55' text-anchor='middle' font-weight='bold'>RN</text></svg>" />
+
+  <!-- Tipografías de alta gama (Playfair Display + Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Hoja de estilos del proyecto -->
+  <style>
+/* ==========================================================================
+   RelojNori — Tienda Virtual de Relojes
+   Hoja de estilos principal (Vanilla CSS)
+   Identidad visual: Carbón (#20231F), Marfil (#F7F6F2), Dorado cálido (#B98B55),
+                     Arena (#E9E6DD), Blanco (#FFFFFF)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES Y SISTEMA DE DISEÑO
+   -------------------------------------------------------------------------- */
+:root {
+  --color-carbon: #20231F;
+  --color-carbon-rgb: 32, 35, 31;
+  --color-carbon-light: #2E332C;
+  --color-carbon-muted: #5A6058;
+  --color-marfil: #F7F6F2;
+  --color-dorado: #B98B55;
+  --color-dorado-rgb: 185, 139, 85;
+  --color-dorado-hover: #A27743;
+  --color-dorado-soft: rgba(185, 139, 85, 0.12);
+  --color-arena: #E9E6DD;
+  --color-arena-soft: #F0EDE5;
+  --color-blanco: #FFFFFF;
+  --color-borde: #E2DFD8;
+  --color-error: #B84743;
+  --color-exito: #3D7C55;
+
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 6px rgba(32, 35, 31, 0.04);
+  --shadow-md: 0 8px 24px rgba(32, 35, 31, 0.08);
+  --shadow-lg: 0 16px 36px rgba(32, 35, 31, 0.12);
+  --shadow-card-hover: 0 18px 40px rgba(32, 35, 31, 0.14);
+
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  --container-max: 1240px;
+  --header-height: 76px;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET Y ESTILOS BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-marfil);
+  color: var(--color-carbon);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: var(--transition-fast);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-dorado);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. BARRA SUPERIOR Y NAVEGACIÓN
+   -------------------------------------------------------------------------- */
+.announcement-bar {
+  background-color: var(--color-carbon);
+  color: var(--color-marfil);
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.announcement-bar .highlight {
+  color: var(--color-dorado);
+  font-weight: 600;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(247, 246, 242, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-borde);
+  transition: var(--transition-normal);
+}
+
+.site-header.is-scrolled {
+  background-color: rgba(247, 246, 242, 0.98);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+/* Brand Logo */
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.brand-logo .logo-main {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--color-carbon);
+  line-height: 1;
+}
+
+.brand-logo .logo-sub {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-dorado);
+  margin-top: 4px;
+}
+
+/* Main Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-carbon);
+  position: relative;
+  padding: 0.4rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-dorado);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-dorado-hover);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  width: 100%;
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.action-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-carbon);
+  background-color: transparent;
+  transition: var(--transition-fast);
+}
+
+.action-btn:hover {
+  background-color: var(--color-arena);
+  color: var(--color-dorado-hover);
+}
+
+.action-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+}
+
+.badge-counter {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: var(--color-dorado);
+  color: var(--color-blanco);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-fast);
+}
+
+.badge-counter.bounce {
+  transform: scale(1.3);
+}
+
+.badge-counter.hidden {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  padding: 4.5rem 0 5.5rem;
+  background: linear-gradient(135deg, var(--color-marfil) 0%, var(--color-arena) 100%);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(185, 139, 85, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-dorado);
+  margin-bottom: 1.5rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-dorado);
+  border-radius: 50%;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--color-carbon);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-dorado);
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-carbon-muted);
+  margin-bottom: 2.25rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Hero Showcase Card */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-card {
+  position: relative;
+  background: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 440px;
+  transition: transform var(--transition-slow);
+}
+
+.hero-card:hover {
+  transform: translateY(-6px);
+}
+
+.hero-img-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: #EFECE6;
+  aspect-ratio: 1 / 1;
+}
+
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.hero-card:hover .hero-img-wrap img {
+  transform: scale(1.05);
+}
+
+.hero-card-meta {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.hero-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+}
+
+.hero-card-subtitle {
+  font-size: 0.8125rem;
+  color: var(--color-carbon-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero-card-price {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-dorado);
+}
+
+.hero-floating-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(32, 35, 31, 0.9);
+  backdrop-filter: blur(8px);
+  color: var(--color-marfil);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   5. BOTONES GLOBALES
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-carbon);
+  color: var(--color-blanco);
+  border: 1px solid var(--color-carbon);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-dorado);
+  border-color: var(--color-dorado);
+  color: var(--color-blanco);
+  box-shadow: 0 4px 14px rgba(185, 139, 85, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-carbon);
+  border: 1px solid var(--color-carbon);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-carbon);
+  color: var(--color-blanco);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background-color: var(--color-dorado);
+  color: var(--color-blanco);
+  border: 1px solid var(--color-dorado);
+}
+
+.btn-gold:hover {
+  background-color: var(--color-dorado-hover);
+  border-color: var(--color-dorado-hover);
+  box-shadow: 0 4px 14px rgba(185, 139, 85, 0.4);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   6. BLOQUE DE BENEFICIOS
+   -------------------------------------------------------------------------- */
+.benefits-section {
+  padding: 3rem 0;
+  background-color: var(--color-blanco);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.benefit-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.benefit-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-dorado-soft);
+  color: var(--color-dorado);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.8;
+}
+
+.benefit-title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  margin-bottom: 0.25rem;
+}
+
+.benefit-desc {
+  font-size: 0.8125rem;
+  color: var(--color-carbon-muted);
+  line-height: 1.45;
+}
+
+/* --------------------------------------------------------------------------
+   7. CATÁLOGO DE PRODUCTOS (SECCIÓN PRINCIPAL)
+   -------------------------------------------------------------------------- */
+.catalog-section {
+  padding: 5rem 0;
+  background-color: var(--color-marfil);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-dorado);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--color-carbon-muted);
+}
+
+/* Toolbar de Búsqueda, Filtros y Orden */
+.catalog-toolbar {
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.toolbar-primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Search bar */
+.search-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  max-width: 440px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 2.75rem 0.75rem 2.75rem;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-marfil);
+  font-size: 0.9375rem;
+  color: var(--color-carbon);
+  transition: var(--transition-fast);
+}
+
+.search-input:focus {
+  background-color: var(--color-blanco);
+  border-color: var(--color-dorado);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(185, 139, 85, 0.15);
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-carbon-muted);
+  pointer-events: none;
+  display: flex;
+}
+
+.search-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-carbon-muted);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  display: none;
+}
+
+.clear-search-btn:hover {
+  color: var(--color-carbon);
+  background-color: var(--color-arena);
+}
+
+.clear-search-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Sort dropdown */
+.sort-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sort-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-carbon-muted);
+  white-space: nowrap;
+}
+
+.sort-select {
+  padding: 0.75rem 2rem 0.75rem 1rem;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-marfil);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-carbon);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2320231F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  transition: var(--transition-fast);
+}
+
+.sort-select:focus {
+  border-color: var(--color-dorado);
+  outline: none;
+  background-color: var(--color-blanco);
+}
+
+/* Category filter tabs */
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-arena);
+}
+
+.filter-btn {
+  padding: 0.5rem 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-marfil);
+  color: var(--color-carbon);
+  transition: var(--transition-fast);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-dorado);
+  color: var(--color-dorado-hover);
+  background-color: var(--color-blanco);
+}
+
+.filter-btn.is-active {
+  background-color: var(--color-carbon);
+  color: var(--color-blanco);
+  border-color: var(--color-carbon);
+  font-weight: 600;
+}
+
+/* Results status bar */
+.results-info-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  font-size: 0.875rem;
+  color: var(--color-carbon-muted);
+}
+
+.results-count {
+  font-weight: 500;
+}
+
+.results-count strong {
+  color: var(--color-carbon);
+  font-weight: 700;
+}
+
+.active-filter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--color-arena);
+  color: var(--color-carbon);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+}
+
+/* Product Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+/* Product Card */
+.product-card {
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(185, 139, 85, 0.4);
+}
+
+.card-img-container {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background-color: #F2EFE9;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.product-card:hover .card-img {
+  transform: scale(1.08);
+}
+
+/* Commercial Badge */
+.card-badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  background-color: var(--color-carbon);
+  color: var(--color-blanco);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-sm);
+  z-index: 2;
+}
+
+.card-badge.badge-limited {
+  background-color: var(--color-dorado);
+}
+
+.card-badge.badge-best {
+  background-color: #2F3E33;
+}
+
+/* Favorite Button */
+.fav-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-carbon);
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.fav-btn:hover {
+  transform: scale(1.12);
+  background-color: var(--color-blanco);
+  color: var(--color-error);
+}
+
+.fav-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--transition-fast), fill var(--transition-fast);
+}
+
+.fav-btn.is-favorite {
+  color: var(--color-error);
+}
+
+.fav-btn.is-favorite svg {
+  fill: var(--color-error);
+  stroke: var(--color-error);
+  animation: heartPulse 0.35s ease-out;
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* Quick View Overlay Button */
+.quick-view-btn {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  background-color: rgba(32, 35, 31, 0.92);
+  color: var(--color-blanco);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  transition: all var(--transition-fast);
+  z-index: 3;
+}
+
+.product-card:hover .quick-view-btn {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.quick-view-btn:hover {
+  background-color: var(--color-dorado);
+}
+
+.quick-view-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Card Body */
+.card-body {
+  padding: 1.35rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-category {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-dorado);
+  margin-bottom: 0.35rem;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.8125rem;
+  color: var(--color-carbon-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.45rem;
+}
+
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-arena-soft);
+}
+
+.card-price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-carbon-muted);
+}
+
+.card-price {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+}
+
+.add-cart-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-carbon);
+  color: var(--color-blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.add-cart-btn:hover {
+  background-color: var(--color-dorado);
+  box-shadow: 0 4px 10px rgba(185, 139, 85, 0.3);
+  transform: translateY(-2px);
+}
+
+.add-cart-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Empty State */
+.catalog-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--color-blanco);
+  border: 1px dashed var(--color-borde);
+  border-radius: var(--radius-md);
+  margin: 1rem 0;
+  display: none;
+}
+
+.catalog-empty.is-visible {
+  display: block;
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.25rem;
+  color: var(--color-carbon-muted);
+  background-color: var(--color-marfil);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.empty-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  margin-bottom: 0.5rem;
+}
+
+.empty-text {
+  font-size: 0.9375rem;
+  color: var(--color-carbon-muted);
+  max-width: 400px;
+  margin: 0 auto 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. SECCIÓN EDITORIAL / SOBRE NOSOTROS
+   -------------------------------------------------------------------------- */
+.editorial-section {
+  padding: 5.5rem 0;
+  background-color: var(--color-blanco);
+  border-top: 1px solid var(--color-borde);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.editorial-visual {
+  position: relative;
+}
+
+.editorial-img-box {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 5;
+  background-color: var(--color-arena);
+}
+
+.editorial-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editorial-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: var(--color-carbon);
+  color: var(--color-marfil);
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-width: 260px;
+  border-left: 4px solid var(--color-dorado);
+}
+
+.editorial-badge-number {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-dorado);
+}
+
+.editorial-badge-text {
+  font-size: 0.8125rem;
+  margin-top: 0.4rem;
+  color: var(--color-arena);
+  line-height: 1.4;
+}
+
+.editorial-content {
+  padding-left: 1rem;
+}
+
+.editorial-quote {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--color-carbon);
+  line-height: 1.45;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.editorial-body {
+  font-size: 1rem;
+  color: var(--color-carbon-muted);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.editorial-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-arena);
+}
+
+.pillar-item h4 {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pillar-item h4::before {
+  content: '—';
+  color: var(--color-dorado);
+}
+
+.pillar-item p {
+  font-size: 0.8125rem;
+  color: var(--color-carbon-muted);
+}
+
+/* --------------------------------------------------------------------------
+   9. FORMULARIO DE NOVEDADES (NEWSLETTER)
+   -------------------------------------------------------------------------- */
+.newsletter-section {
+  padding: 5rem 0;
+  background-color: var(--color-arena);
+  position: relative;
+}
+
+.newsletter-box {
+  background: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 3rem;
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-carbon) 0%, var(--color-dorado) 50%, var(--color-carbon) 100%);
+}
+
+.newsletter-title {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  margin-bottom: 0.75rem;
+}
+
+.newsletter-subtitle {
+  font-size: 1rem;
+  color: var(--color-carbon-muted);
+  max-width: 540px;
+  margin: 0 auto 2rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 520px;
+  margin: 0 auto 1rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-marfil);
+  font-size: 0.9375rem;
+  color: var(--color-carbon);
+  transition: var(--transition-fast);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--color-dorado);
+  background-color: var(--color-blanco);
+  box-shadow: 0 0 0 3px rgba(185, 139, 85, 0.15);
+}
+
+.newsletter-disclaimer {
+  font-size: 0.75rem;
+  color: var(--color-carbon-muted);
+}
+
+/* --------------------------------------------------------------------------
+   10. PIE DE PÁGINA (FOOTER)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-carbon);
+  color: var(--color-marfil);
+  padding: 4.5rem 0 2rem;
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand .logo-main {
+  color: var(--color-blanco);
+}
+
+.footer-bio {
+  font-size: 0.875rem;
+  color: #A3A8A0;
+  margin: 1.25rem 0 1.5rem;
+  line-height: 1.6;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-link {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-marfil);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.social-link:hover {
+  background-color: var(--color-dorado);
+  color: var(--color-blanco);
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-heading {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-blanco);
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  font-size: 0.875rem;
+  color: #A3A8A0;
+}
+
+.footer-links a:hover {
+  color: var(--color-dorado);
+  padding-left: 4px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #A3A8A0;
+  margin-bottom: 0.85rem;
+}
+
+.footer-contact-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-dorado);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  color: #7E857B;
+}
+
+.footer-bottom-badge {
+  color: var(--color-dorado);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   11. PANEL LATERAL DEL CARRITO (OFFCANVAS DRAWER)
+   -------------------------------------------------------------------------- */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(32, 35, 31, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.drawer-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--color-blanco);
+  z-index: 1001;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+}
+
+.cart-drawer.is-open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-borde);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drawer-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.drawer-count-badge {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: var(--color-dorado-soft);
+  color: var(--color-dorado);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.drawer-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-carbon-muted);
+  transition: var(--transition-fast);
+}
+
+.drawer-close-btn:hover {
+  background-color: var(--color-arena);
+  color: var(--color-carbon);
+}
+
+.drawer-close-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Items list */
+.cart-items-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-arena);
+  position: relative;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cart-item-img {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-sm);
+  background-color: #EFECE6;
+  object-fit: cover;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-title {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  line-height: 1.3;
+}
+
+.cart-item-category {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-dorado);
+  margin-bottom: 0.35rem;
+}
+
+.cart-item-price {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-carbon-muted);
+}
+
+/* Quantity controls */
+.qty-controls {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-marfil);
+  margin-top: 0.5rem;
+  width: fit-content;
+}
+
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-carbon);
+  font-size: 0.875rem;
+  transition: var(--transition-fast);
+}
+
+.qty-btn:hover {
+  background-color: var(--color-arena);
+  color: var(--color-dorado-hover);
+}
+
+.qty-value {
+  min-width: 24px;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.cart-item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.item-total-price {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+}
+
+.delete-item-btn {
+  color: #A3A8A0;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  margin-top: 0.5rem;
+}
+
+.delete-item-btn:hover {
+  color: var(--color-error);
+  background-color: #FDEDEC;
+}
+
+.delete-item-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Empty Cart State */
+.cart-empty-state {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  margin: auto 0;
+  display: none;
+}
+
+.cart-empty-state.is-visible {
+  display: block;
+}
+
+.cart-empty-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--color-marfil);
+  color: var(--color-carbon-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.cart-empty-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.cart-empty-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  margin-bottom: 0.5rem;
+}
+
+.cart-empty-text {
+  font-size: 0.875rem;
+  color: var(--color-carbon-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Cart Footer */
+.drawer-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--color-borde);
+  background-color: var(--color-marfil);
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  font-size: 0.875rem;
+  color: var(--color-carbon-muted);
+}
+
+.cart-summary-row.total-row {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--color-borde);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+}
+
+.cart-summary-row.total-row .total-amount {
+  color: var(--color-carbon);
+  font-size: 1.25rem;
+}
+
+.shipping-free {
+  color: var(--color-exito);
+  font-weight: 600;
+}
+
+.cart-demo-notice {
+  font-size: 0.75rem;
+  color: var(--color-carbon-muted);
+  background-color: var(--color-arena-soft);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+  margin: 1rem 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   12. PANEL LATERAL DE FAVORITOS
+   -------------------------------------------------------------------------- */
+.favorites-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--color-blanco);
+  z-index: 1001;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+}
+
+.favorites-drawer.is-open {
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   13. VENTANAS EMERGENTES (MODALES)
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(32, 35, 31, 0.65);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  background-color: var(--color-blanco);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 520px;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.95);
+  transition: transform var(--transition-normal);
+  overflow: hidden;
+}
+
+.modal-overlay.is-open .modal-box {
+  transform: scale(1);
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-borde);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+}
+
+.modal-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-carbon-muted);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--color-arena);
+  color: var(--color-carbon);
+}
+
+.modal-body {
+  padding: 1.75rem 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-carbon-muted);
+  line-height: 1.6;
+}
+
+.modal-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--color-borde);
+  background-color: var(--color-marfil);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* Quick View Specific Modal */
+.quick-view-box {
+  max-width: 780px;
+}
+
+.quick-view-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 2rem;
+}
+
+.qv-image {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: #EFECE6;
+}
+
+.qv-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.qv-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.qv-specs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+  padding: 1rem;
+  background-color: var(--color-marfil);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+}
+
+.qv-spec-item strong {
+  color: var(--color-carbon);
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   14. NOTIFICACIONES FLOTANTES (TOASTS)
+   -------------------------------------------------------------------------- */
+.toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+.toast {
+  background-color: var(--color-carbon);
+  color: var(--color-blanco);
+  padding: 0.875rem 1.25rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-left: 3px solid var(--color-dorado);
+  pointer-events: auto;
+  animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1), toastFadeOut 0.3s cubic-bezier(0.16, 1, 0.3, 1) 3.7s forwards;
+  max-width: 360px;
+}
+
+.toast svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-dorado);
+  flex-shrink: 0;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. RESPONSIVE DESIGN & MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+/* Dispositivos medianos (Tablets < 1024px) */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero-card {
+    max-width: 380px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .editorial-content {
+    padding-left: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Dispositivos móviles (< 768px) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .site-header {
+    position: sticky;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background-color: var(--color-marfil);
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--color-borde);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+  }
+
+  .main-nav.is-mobile-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .card-body {
+    padding: 1rem 0.85rem 0.85rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-price {
+    font-size: 1rem;
+  }
+
+  .catalog-toolbar {
+    padding: 1rem;
+  }
+
+  .toolbar-primary {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-wrapper {
+    max-width: 100%;
+  }
+
+  .sort-wrapper {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .newsletter-box {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .editorial-badge {
+    position: static;
+    margin-top: 1.5rem;
+    max-width: 100%;
+  }
+
+  .editorial-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-view-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .cart-drawer, .favorites-drawer {
+    max-width: 100%;
+  }
+}
+
+/* Teléfonos pequeños (< 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   16. PREFERENCIA DE MOVIMIENTO REDUCIDO (ACCESIBILIDAD)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. BARRA SUPERIOR CON MENSAJE COMERCIAL
+       ====================================================================== -->
+  <div class="announcement-bar" role="region" aria-label="Aviso comercial">
+    <span>Envíos asegurados a toda Colombia &bull; Garantía oficial de 2 años &bull; <strong class="highlight">Edición Limitada 2026</strong></span>
+  </div>
+
+  <!-- ======================================================================
+       2. ENCABEZADO Y NAVEGACIÓN PRINCIPAL
+       ====================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      
+      <!-- Logotipo de la marca -->
+      <a href="#inicio" class="brand-logo" aria-label="RelojNori - Ir a Inicio">
+        <span class="logo-main">RelojNori</span>
+        <span class="logo-sub">HORLOGERIE</span>
+      </a>
+
+      <!-- Menú de navegación -->
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="#inicio" class="nav-link is-active">Inicio</a>
+        <a href="#catalogo" class="nav-link">Catálogo</a>
+        <a href="#beneficios" class="nav-link">Garantía</a>
+        <a href="#nosotros" class="nav-link">Nuestra Esencia</a>
+        <a href="#novedades" class="nav-link">Novedades</a>
+      </nav>
+
+      <!-- Botones de acción del encabezado -->
+      <div class="header-actions">
+        <!-- Botón de Favoritos -->
+        <button type="button" class="action-btn" id="favToggleBtn" aria-label="Ver piezas favoritas" title="Mis Favoritos">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+          <span class="badge-counter hidden" id="favCountBadge" aria-live="polite">0</span>
+        </button>
+
+        <!-- Botón de Carrito de Compras -->
+        <button type="button" class="action-btn" id="cartToggleBtn" aria-label="Abrir carrito de compras" title="Carrito de compras">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+            <path d="M3 6h18"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="badge-counter hidden" id="cartCountBadge" aria-live="polite">0</span>
+        </button>
+
+        <!-- Botón hamburguesa móvil -->
+        <button type="button" class="action-btn menu-toggle" id="menuToggleBtn" aria-label="Abrir menú de navegación">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         3. SECCIÓN HERO (PORTADA PRINCIPAL)
+         ==================================================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="container hero-grid">
+        
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            Colección 2026 &bull; Relojería con Carácter
+          </div>
+          <h1 class="hero-title">
+            El tiempo trasciende la <em>forma</em>.
+          </h1>
+          <p class="hero-description">
+            Piezas de relojería concebidas bajo la sobriedad contemporánea y la precisión excepcional. Materiales nobles, líneas depuradas y acabados meticulosos diseñados para acompañar tus mejores momentos.
+          </p>
+          <div class="hero-actions">
+            <a href="#catalogo" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              Explorar Colección
+            </a>
+            <a href="#nosotros" class="btn btn-secondary">
+              Conocer RelojNori
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-floating-badge">Pieza Insignia</div>
+            <div class="hero-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=80" 
+                alt="Reloj RelojNori pieza insignia en acero y cuero blanco" 
+                loading="eager" 
+              />
+            </div>
+            <div class="hero-card-meta">
+              <div>
+                <h3 class="hero-card-title">RelojNori Pure Chrono</h3>
+                <span class="hero-card-subtitle">Minimalista &bull; Edición 2026</span>
+              </div>
+              <div class="hero-card-price">$ 1.250.000</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. BLOQUE DE BENEFICIOS Y GARANTÍAS
+         ==================================================================== -->
+    <section class="benefits-section" id="beneficios" aria-label="Garantías y beneficios">
+      <div class="container">
+        <div class="benefits-grid">
+          
+          <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19"/>
+                <path d="M23 13v-2"/>
+                <circle cx="7" cy="18" r="2"/>
+                <circle cx="17" cy="18" r="2"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">Envío Asegurado</h3>
+              <p class="benefit-desc">Despacho nacional gratuito y asegurado a las principales ciudades de Colombia.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">Garantía Oficial de 2 Años</h3>
+              <p class="benefit-desc">Cobertura técnica integral en mecanismo, empaques y componentes de manufactura.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m4.93 4.93 4.24 4.24"/>
+                <path d="m14.83 9.17 4.24-4.24"/>
+                <path d="m14.83 14.83 4.24 4.24"/>
+                <path d="m9.17 14.83-4.24 4.24"/>
+                <circle cx="12" cy="12" r="4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">Maquinaria de Precisión</h3>
+              <p class="benefit-desc">Calibres certificados de alta precisión con riguroso control de calidad antes del despacho.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">Atención Personalizada</h3>
+              <p class="benefit-desc">Asesoría técnica y estilística de nuestro equipo para elegir la pieza idónea para ti.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. CATÁLOGO DE PRODUCTOS (BÚSQUEDA, FILTROS Y ORDENAMIENTO)
+         ==================================================================== -->
+    <section class="catalog-section" id="catalogo">
+      <div class="container">
+        
+        <header class="section-header">
+          <span class="section-tag">Catálogo Exclusivo</span>
+          <h2 class="section-title">Nuestra Colección de Relojes</h2>
+          <p class="section-subtitle">
+            Explora piezas seleccionadas por su equilibrio estético, solidez mecánica y distinción atemporal.
+          </p>
+        </header>
+
+        <!-- Barra de herramientas: Búsqueda, Orden y Filtros -->
+        <div class="catalog-toolbar" role="search" aria-label="Filtrar catálogo de relojes">
+          
+          <div class="toolbar-primary">
+            <!-- Campo de búsqueda -->
+            <div class="search-wrapper">
+              <span class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" x2="16.65" y1="21" y2="16.65"/>
+                </svg>
+              </span>
+              <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="Buscar por nombre, categoría o detalle..." 
+                aria-label="Buscar productos"
+                autocomplete="off"
+              />
+              <button type="button" class="clear-search-btn" id="clearSearchBtn" aria-label="Limpiar búsqueda" title="Limpiar búsqueda">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" x2="6" y1="6" y2="18"/>
+                  <line x1="6" x2="18" y1="6" y2="18"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Selector de ordenamiento -->
+            <div class="sort-wrapper">
+              <label for="sortSelect" class="sort-label">Ordenar por:</label>
+              <select id="sortSelect" class="sort-select" aria-label="Criterio de ordenación">
+                <option value="default">Recomendados / Destacados</option>
+                <option value="price-asc">Precio: de menor a mayor</option>
+                <option value="price-desc">Precio: de mayor a menor</option>
+                <option value="name-asc">Nombre: A – Z</option>
+                <option value="name-desc">Nombre: Z – A</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Filtro de Categorías -->
+          <div class="category-filters" role="group" aria-label="Filtrar por categoría">
+            <button type="button" class="filter-btn is-active" data-category="Todos">Todos</button>
+            <button type="button" class="filter-btn" data-category="Clásicos">Clásicos</button>
+            <button type="button" class="filter-btn" data-category="Deportivos">Deportivos</button>
+            <button type="button" class="filter-btn" data-category="Minimalistas">Minimalistas</button>
+            <button type="button" class="filter-btn" data-category="Elegantes">Elegantes</button>
+          </div>
+
+        </div>
+
+        <!-- Indicador de resultados activos -->
+        <div class="results-info-bar">
+          <span class="results-count" id="resultsCount">Cargando modelos...</span>
+          <span class="active-filter-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+            </svg>
+            Vista en Vivo
+          </span>
+        </div>
+
+        <!-- Cuadrícula interactiva de productos -->
+        <div class="products-grid" id="productsGrid" aria-live="polite">
+          <!-- Renderizado dinámicamente mediante renderProducts() en app.js -->
+        </div>
+
+        <!-- Estado vacío cuando no hay resultados de búsqueda -->
+        <div class="catalog-empty" id="catalogEmpty">
+          <div class="empty-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" x2="16.65" y1="21" y2="16.65"/>
+              <line x1="8" x2="14" y1="11" y2="11"/>
+            </svg>
+          </div>
+          <h3 class="empty-title">No se encontraron relojes</h3>
+          <p class="empty-text">No existen piezas que coincidan con los criterios de búsqueda o categoría seleccionados.</p>
+          <button type="button" class="btn btn-secondary" id="resetFiltersBtn">
+            Restablecer todos los filtros
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. SECCIÓN EDITORIAL / NUESTRA ESENCIA
+         ==================================================================== -->
+    <section class="editorial-section" id="nosotros">
+      <div class="container editorial-grid">
+        
+        <div class="editorial-visual">
+          <div class="editorial-img-box">
+            <img 
+              src="https://images.unsplash.com/photo-1585123334904-845d60e97b29?auto=format&fit=crop&w=1000&q=80" 
+              alt="Mesa de trabajo y ensamblaje de reloj de alta precisión RelojNori" 
+              loading="lazy"
+            />
+          </div>
+          <div class="editorial-badge">
+            <div class="editorial-badge-number">100%</div>
+            <div class="editorial-badge-text">Precisión cronométrica y pasión por el diseño sobrio.</div>
+          </div>
+        </div>
+
+        <div class="editorial-content">
+          <span class="section-tag">Manifiesto de Marca</span>
+          <blockquote class="editorial-quote">
+            "No diseñamos objetos para medir las horas que pasan, sino para conmemorar los instantes que dejan huella."
+          </blockquote>
+          <p class="editorial-body">
+            En <strong>RelojNori</strong> creemos que un reloj es mucho más que un instrumento: es una declaración de intenciones. Cada pieza nace del diálogo entre la alta ingeniería relojera, la pureza visual y el buen gusto estético contemporáneo.
+          </p>
+          <p class="editorial-body">
+            Trabajamos exclusivamente con aceros quirúrgicos 316L, cristales de zafiro de alta dureza y calibres sometidos a rigurosas calibraciones de exactitud, garantizando que tu reloj te acompañe generación tras generación.
+          </p>
+
+          <div class="editorial-pillars">
+            <div class="pillar-item">
+              <h4>Cristal de Zafiro</h4>
+              <p>Tratamiento antirreflejo doble con dureza 9 en la escala de Mohs.</p>
+            </div>
+            <div class="pillar-item">
+              <h4>Acero Quirúrgico 316L</h4>
+              <p>Resistente a la corrosión marina, hipoalergénico y pulido artesanal.</p>
+            </div>
+            <div class="pillar-item">
+              <h4>Calibres Contrastados</h4>
+              <p>Mecanismos mecánicos y de cuarzo seleccionados por su fiabilidad.</p>
+            </div>
+            <div class="pillar-item">
+              <h4>Sello Ético</h4>
+              <p>Correas de cuero curtido vegetal y procesos de manufactura responsable.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. FORMULARIO DE NOVEDADES (NEWSLETTER)
+         ==================================================================== -->
+    <section class="newsletter-section" id="novedades">
+      <div class="container">
+        <div class="newsletter-box">
+          <span class="section-tag">Círculo RelojNori</span>
+          <h2 class="newsletter-title">Acceso Exclusivo a Nuevas Ediciones</h2>
+          <p class="newsletter-subtitle">
+            Recibe en primicia nuestras series numeradas, artículos sobre cultura relojera y ofertas reservadas para miembros.
+          </p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <input 
+              type="email" 
+              class="newsletter-input" 
+              id="newsletterEmail" 
+              placeholder="Ingresa tu correo electrónico..." 
+              required 
+              aria-label="Correo electrónico para suscripción"
+            />
+            <button type="submit" class="btn btn-primary">
+              Suscribirme
+            </button>
+          </form>
+          <p class="newsletter-disclaimer">
+            Respetamos tu privacidad. No enviamos spam y puedes darte de baja en cualquier momento.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       8. PIE DE PÁGINA (FOOTER)
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Columna 1: Marca y Filosofía -->
+        <div class="footer-brand">
+          <a href="#inicio" class="brand-logo">
+            <span class="logo-main">RelojNori</span>
+            <span class="logo-sub">HORLOGERIE</span>
+          </a>
+          <p class="footer-bio">
+            Relojes de diseño contemporáneo creados para quienes valoran la precisión, la sobriedad y la autenticidad en cada detalle.
+          </p>
+          <div class="footer-social" aria-label="Redes sociales oficiales">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Pinterest">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" x2="12" y1="8" y2="12"/>
+                <line x1="12" x2="12.01" y1="16" y2="16"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna 2: Colecciones -->
+        <div>
+          <h4 class="footer-heading">Colecciones</h4>
+          <ul class="footer-links">
+            <li><a href="#catalogo">Relojes Clásicos</a></li>
+            <li><a href="#catalogo">Relojes Deportivos</a></li>
+            <li><a href="#catalogo">Relojes Minimalistas</a></li>
+            <li><a href="#catalogo">Relojes Elegantes</a></li>
+            <li><a href="#catalogo">Ediciones Limitadas</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Información & Ayuda -->
+        <div>
+          <h4 class="footer-heading">Servicio al Cliente</h4>
+          <ul class="footer-links">
+            <li><a href="#beneficios">Garantía de 2 Años</a></li>
+            <li><a href="#beneficios">Guía de Cuidados</a></li>
+            <li><a href="#beneficios">Envíos y Entregas</a></li>
+            <li><a href="#nosotros">Nuestra Filosofía</a></li>
+            <li><a href="#inicio">Términos del Servicio</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Contacto directo -->
+        <div>
+          <h4 class="footer-heading">Contacto y Sala de Ventas</h4>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Calle 85 # 11-53, Zona Rosa, Bogotá D.C., Colombia</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            <span>soporte@relojnori.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>+57 (601) 390 4488</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 RelojNori Horlogerie. Todos los derechos reservados. Prototipo de comercio electrónico frontend.</p>
+        <span class="footer-bottom-badge">Hecho con HTML5, CSS3 y Vanilla JavaScript</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       9. COMPONENTES INTERACTIVOS (DRAWER CARRITO, FAVORITOS Y MODALES)
+       ====================================================================== -->
+
+  <!-- Fondo oscuro difuminado para los paneles laterales -->
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+  <!-- PANEL LATERAL: CARRITO DE COMPRAS -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras" role="dialog" aria-modal="true">
+    <div class="drawer-header">
+      <h3 class="drawer-title">
+        <span>Tu Carrito</span>
+        <span class="drawer-count-badge" id="drawerCartCount">0 artículos</span>
+      </h3>
+      <button type="button" class="drawer-close-btn" id="cartCloseBtn" aria-label="Cerrar carrito">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" x2="6" y1="6" y2="18"/>
+          <line x1="6" x2="18" y1="6" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Lista de artículos en el carrito -->
+    <div class="cart-items-body" id="cartItemsBody">
+      <!-- Los elementos se insertan dinámicamente con renderCart() -->
+    </div>
+
+    <!-- Estado vacío del carrito -->
+    <div class="cart-empty-state" id="cartEmptyState">
+      <div class="cart-empty-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+        </svg>
+      </div>
+      <h4 class="cart-empty-title">Tu carrito está vacío</h4>
+      <p class="cart-empty-text">Aún no has agregado ninguna pieza de nuestra colección.</p>
+      <a href="#catalogo" class="btn btn-secondary" onclick="window.closeCart();">
+        Ver catálogo de relojes
+      </a>
+    </div>
+
+    <!-- Pie del carrito con resumen y botón de compra -->
+    <div class="drawer-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">$ 0 COP</strong>
+      </div>
+      <div class="cart-summary-row">
+        <span>Envío nacional</span>
+        <span class="shipping-free">Gratis</span>
+      </div>
+      <div class="cart-summary-row total-row">
+        <span>Total Estimado</span>
+        <span class="total-amount" id="cartTotal">$ 0 COP</span>
+      </div>
+      <div class="cart-demo-notice">
+        <strong>Aviso:</strong> Este es un prototipo demostrativo. No se procesarán cobros reales.
+      </div>
+      <button type="button" class="btn btn-primary btn-block" id="checkoutBtn">
+        Proceder al Pago Demo
+      </button>
+    </div>
+  </aside>
+
+  <!-- PANEL LATERAL: FAVORITOS -->
+  <aside class="favorites-drawer" id="favoritesDrawer" aria-label="Productos favoritos" role="dialog" aria-modal="true">
+    <div class="drawer-header">
+      <h3 class="drawer-title">
+        <span>Tus Favoritos</span>
+        <span class="drawer-count-badge" id="drawerFavCount">0 piezas</span>
+      </h3>
+      <button type="button" class="drawer-close-btn" id="favCloseBtn" aria-label="Cerrar favoritos">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" x2="6" y1="6" y2="18"/>
+          <line x1="6" x2="18" y1="6" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="cart-items-body" id="favItemsBody">
+      <!-- Los elementos se insertan dinámicamente -->
+    </div>
+
+    <div class="cart-empty-state" id="favEmptyState">
+      <div class="cart-empty-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+        </svg>
+      </div>
+      <h4 class="cart-empty-title">Sin favoritos guardados</h4>
+      <p class="cart-empty-text">Haz clic en el icono de corazón en cualquier reloj para guardarlo en tu lista personal.</p>
+    </div>
+  </aside>
+
+  <!-- MODAL GENERAL (showModal(title, text)) -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Información</h3>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar ventana emergente">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" x2="6" y1="6" y2="18"/>
+            <line x1="6" x2="18" y1="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Contenido inyectado dinámicamente -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="modalOkBtn">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE VISTA RÁPIDA (QUICK VIEW) -->
+  <div class="modal-overlay" id="quickViewModal" role="dialog" aria-modal="true" aria-label="Detalles rápidos del reloj">
+    <div class="modal-box quick-view-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Ficha Técnica de la Pieza</h3>
+        <button type="button" class="modal-close-btn" id="quickViewCloseBtn" aria-label="Cerrar detalles">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" x2="6" y1="6" y2="18"/>
+            <line x1="6" x2="18" y1="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" id="quickViewBody">
+        <!-- Detalles generados dinámicamente con openQuickView(id) -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENEDOR FLOTANTE DE NOTIFICACIONES (TOASTS) -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Lógica JavaScript del proyecto -->
+  <script>
+/**
+ * ============================================================================
+ * RelojNori — Tienda Virtual de Relojes
+ * Archivo principal de JavaScript (Vanilla JavaScript)
+ * Funcionalidad: Catálogo, Búsqueda, Filtros, Orden, Carrito, Favoritos,
+ *                Modales y Toasts informativos con persistencia en localStorage.
+ * ============================================================================
+ */
+
+(function () {
+  'use strict';
+
+  // --------------------------------------------------------------------------
+  // 1. DATOS DE DEMOSTRACIÓN (8 PRODUCTOS DE EJEMPLO RELOJNORI)
+  // --------------------------------------------------------------------------
+  const PRODUCTS = [
+    {
+      id: 1,
+      name: "RelojNori Chrono Diver 300",
+      category: "Deportivos",
+      price: 1450000,
+      tag: "Más Vendido",
+      tagClass: "badge-best",
+      description: "Cronógrafo sumergible con bisel cerámico unidireccional, pulsadores estancos y luminiscencia de alta visibilidad.",
+      image: "https://images.unsplash.com/photo-1547996160-71dfabb1a9b1?auto=format&fit=crop&w=800&q=80",
+      specs: {
+        diameter: "42 mm",
+        case: "Acero 316L satinado",
+        waterResistance: "30 ATM / 300 m",
+        crystal: "Zafiro antirreflejo doble",
+        movement: "Calibre Cuarzo Mecha-Chrono",
+        strap: "Silicona FKM deportiva con hebilla de acero"
+      }
+    },
+    {
+      id: 2,
+      name: "RelojNori Stella Minimal Gold",
+      category: "Minimalistas",
+      price: 980000,
+      tag: "Nuevo",
+      tagClass: "",
+      description: "Esfera depurada en oro cálido con manecillas tipo aguja y correa de cuero italiano suave al tacto.",
+      image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+      specs: {
+        diameter: "38 mm",
+        case: "Acero con PVD Dorado cálido",
+        waterResistance: "5 ATM / 50 m",
+        crystal: "Zafiro ultraplano",
+        movement: "Miyota Precision Japanese Quartz",
+        strap: "Cuero genuino curtido vegetal"
+      }
+    },
+    {
+      id: 3,
+      name: "RelojNori Heritage Automatic",
+      category: "Clásicos",
+      price: 1890000,
+      tag: "Edición Limitada",
+      tagClass: "badge-limited",
+      description: "Elegancia atemporal con dial marfil texturizado, números arábigos en relieve y fechador a las 3.",
+      image: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80",
+      specs: {
+        diameter: "40 mm",
+        case: "Acero inoxidable pulido a espejo",
+        waterResistance: "5 ATM / 50 m",
+        crystal: "Zafiro abombado estilo retro",
+        movement: "Automático 24 rubíes (41h reserva)",
+        strap: "Piel de becerro marrón con pespunte fino"
+      }
+    },
+    {
+      id: 4,
+      name: "RelojNori Midnight Obsidian",
+      category: "Elegantes",
+      price: 1320000,
+      tag: "Exclusivo",
+      tagClass: "",
+      description: "Silueta monolítica monocromática en negro carbón con acabados cepillados a mano de alta relojería.",
+      image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=800&q=80",
+      specs: {
+        diameter: "41 mm",
+        case: "Acero con recubrimiento DLC carbón",
+        waterResistance: "10 ATM / 100 m",
+        crystal: "Zafiro ahumado antirrayaduras",
+        movement: "Cuarzo suizo Ronda 515",
+        strap: "Malla milanesa de acero negro mate"
+      }
+    },
+    {
+      id: 5,
+      name: "RelojNori Aero Racing GMT",
+      category: "Deportivos",
+      price: 1650000,
+      tag: "Nuevo",
+      tagClass: "",
+      description: "Doble huso horario GMT para viajeros intrépidos con bisel bicolor, aguja roja de 24 horas y brazalete sólido.",
+      image: "https://images.unsplash.com/photo-1526045431048-f857369baa09?auto=format&fit=crop&w=800&q=80",
+      specs: {
+        diameter: "42 mm",
+        case: "Acero quirúrgico 316L",
+        waterResistance: "20 ATM / 200 m",
+        crystal: "Zafiro con lente sobre la fecha",
+        movement: "Calibre GMT Independiente",
+        strap: "Brazalete oyster con cierre desplegable"
+      }
+    },
+    {
+      id: 6,
+      name: "RelojNori Bauhaus Mono",
+      category: "Minimalistas",
+      price: 890000,
+      tag: "Más Vendido",
+      tagClass: "badge-best",
+      description: "Inspiración del diseño funcionalista con índices milimétricos limpios y caja delgada de solo 7.2 mm.",
+      image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+      specs: {
+        diameter: "39 mm",
+        case: "Acero 316L ultra delgado (7.2 mm)",
+        waterResistance: "3 ATM / 30 m",
+        crystal: "Zafiro con tratamiento antirreflejo",
+        movement: "Calibre Slim Quartz de alta autonomía",
+        strap: "Cuero negro mate de curtido orgánico"
+      }
+    },
+    {
+      id: 7,
+      name: "RelojNori Grand Classic Vintage",
+      category: "Clásicos",
+      price: 2100000,
+      tag: "Edición Limitada",
+      tagClass: "badge-limited",
+      description: "Tributo a la relojería clásica con detalles dorados cálidos y agujas dauphine facetadas.",
+      image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=800&q=80",
+      specs: {
+        diameter: "39.5 mm",
+        case: "Acero con baño de oro amarillo 18k",
+        waterResistance: "5 ATM / 50 m",
+        crystal: "Hesalite clásico con capa protectora",
+        movement: "Mecánico de cuerda manual (48h)",
+        strap: "Cuero marrón cognac envejecido"
+      }
+    },
+    {
+      id: 8,
+      name: "RelojNori Royale Skeleton Dial",
+      category: "Elegantes",
+      price: 2480000,
+      tag: "Exclusivo",
+      tagClass: "",
+      description: "Esfera esqueletizada que expone el movimiento mecánico palpitante y el volante oscilante con acabados de alta manufactura.",
+      image: "https://images.unsplash.com/photo-1511370235399-1802cae1d32f?auto=format&fit=crop&w=800&q=80",
+      specs: {
+        diameter: "41.5 mm",
+        case: "Acero bitono carbón y dorado",
+        waterResistance: "10 ATM / 100 m",
+        crystal: "Doble zafiro (frontal y trasera vista)",
+        movement: "Automático Skeleton 28.800 alt/h",
+        strap: "Piel grabada con cierre mariposa"
+      }
+    }
+  ];
+
+  // --------------------------------------------------------------------------
+  // 2. ESTADO GLOBAL DE LA APLICACIÓN
+  // --------------------------------------------------------------------------
+  let cart = [];
+  let favorites = [];
+  let currentCategory = 'Todos';
+  let searchQuery = '';
+  let currentSort = 'default';
+
+  // Formateador de moneda en pesos colombianos (COP) según especificación técnica
+  const currencyFormatter = new Intl.NumberFormat('es-CO', {
+    style: 'currency',
+    currency: 'COP',
+    maximumFractionDigits: 0
+  });
+
+  // --------------------------------------------------------------------------
+  // 3. ELEMENTOS DEL DOM
+  // --------------------------------------------------------------------------
+  const DOM = {
+    productsGrid: document.getElementById('productsGrid'),
+    catalogEmpty: document.getElementById('catalogEmpty'),
+    resultsCount: document.getElementById('resultsCount'),
+    searchInput: document.getElementById('searchInput'),
+    clearSearchBtn: document.getElementById('clearSearchBtn'),
+    sortSelect: document.getElementById('sortSelect'),
+    categoryButtons: document.querySelectorAll('.filter-btn'),
+    resetFiltersBtn: document.getElementById('resetFiltersBtn'),
+
+    // Badges contadores del header
+    cartCountBadge: document.getElementById('cartCountBadge'),
+    favCountBadge: document.getElementById('favCountBadge'),
+
+    // Botones de acción del header
+    cartToggleBtn: document.getElementById('cartToggleBtn'),
+    favToggleBtn: document.getElementById('favToggleBtn'),
+    menuToggleBtn: document.getElementById('menuToggleBtn'),
+    mainNav: document.getElementById('mainNav'),
+
+    // Drawer del carrito
+    cartDrawer: document.getElementById('cartDrawer'),
+    cartCloseBtn: document.getElementById('cartCloseBtn'),
+    cartItemsBody: document.getElementById('cartItemsBody'),
+    cartEmptyState: document.getElementById('cartEmptyState'),
+    cartSubtotal: document.getElementById('cartSubtotal'),
+    cartTotal: document.getElementById('cartTotal'),
+    drawerCartCount: document.getElementById('drawerCartCount'),
+    checkoutBtn: document.getElementById('checkoutBtn'),
+
+    // Drawer de favoritos
+    favoritesDrawer: document.getElementById('favoritesDrawer'),
+    favCloseBtn: document.getElementById('favCloseBtn'),
+    favItemsBody: document.getElementById('favItemsBody'),
+    favEmptyState: document.getElementById('favEmptyState'),
+    drawerFavCount: document.getElementById('drawerFavCount'),
+
+    // Fondo oscuro para drawers (Backdrop)
+    drawerBackdrop: document.getElementById('drawerBackdrop'),
+
+    // Ventanas modales generales y de vista rápida
+    modalOverlay: document.getElementById('modalOverlay'),
+    modalTitle: document.getElementById('modalTitle'),
+    modalBody: document.getElementById('modalBody'),
+    modalCloseBtn: document.getElementById('modalCloseBtn'),
+    modalOkBtn: document.getElementById('modalOkBtn'),
+
+    quickViewModal: document.getElementById('quickViewModal'),
+    quickViewBody: document.getElementById('quickViewBody'),
+    quickViewCloseBtn: document.getElementById('quickViewCloseBtn'),
+
+    // Toasts
+    toastContainer: document.getElementById('toastContainer'),
+
+    // Newsletter
+    newsletterForm: document.getElementById('newsletterForm'),
+    newsletterEmail: document.getElementById('newsletterEmail')
+  };
+
+  // --------------------------------------------------------------------------
+  // 4. PERSISTENCIA EN LOCALSTORAGE (RelojNori)
+  // --------------------------------------------------------------------------
+  function initLocalStorage() {
+    try {
+      const storedCart = localStorage.getItem('relojnori_cart') || localStorage.getItem('nordi_cart');
+      if (storedCart) {
+        cart = JSON.parse(storedCart);
+      }
+    } catch (e) {
+      console.warn('No se pudo acceder al carrito en localStorage:', e);
+      cart = [];
+    }
+
+    try {
+      const storedFavs = localStorage.getItem('relojnori_favorites') || localStorage.getItem('nordi_favorites');
+      if (storedFavs) {
+        favorites = JSON.parse(storedFavs);
+      }
+    } catch (e) {
+      console.warn('No se pudieron acceder a favoritos en localStorage:', e);
+      favorites = [];
+    }
+  }
+
+  /**
+   * Guarda el estado del carrito en localStorage y vuelve a renderizarlo
+   * (Cumple con la especificación técnica: saveCart())
+   */
+  function saveCart() {
+    try {
+      localStorage.setItem('relojnori_cart', JSON.stringify(cart));
+    } catch (e) {
+      console.warn('Error al guardar carrito en localStorage:', e);
+    }
+    renderCart();
+  }
+
+  function saveFavorites() {
+    try {
+      localStorage.setItem('relojnori_favorites', JSON.stringify(favorites));
+    } catch (e) {
+      console.warn('Error al guardar favoritos en localStorage:', e);
+    }
+    updateFavoritesBadges();
+    renderFavorites();
+  }
+
+  // --------------------------------------------------------------------------
+  // 5. RENDERIZADO DEL CATÁLOGO (renderProducts())
+  // --------------------------------------------------------------------------
+  /**
+   * Filtra, ordena y dibuja los productos del catálogo
+   * (Cumple con la especificación técnica: renderProducts())
+   */
+  function renderProducts() {
+    if (!DOM.productsGrid) return;
+
+    // 1. Filtrado por categoría
+    let filtered = PRODUCTS.filter(product => {
+      if (currentCategory === 'Todos') return true;
+      return product.category.toLowerCase() === currentCategory.toLowerCase();
+    });
+
+    // 2. Filtrado por término de búsqueda (nombre, categoría o descripción)
+    if (searchQuery.trim() !== '') {
+      const q = searchQuery.toLowerCase().trim();
+      filtered = filtered.filter(product => {
+        return (
+          product.name.toLowerCase().includes(q) ||
+          product.category.toLowerCase().includes(q) ||
+          product.description.toLowerCase().includes(q)
+        );
+      });
+    }
+
+    // 3. Ordenamiento
+    filtered.sort((a, b) => {
+      switch (currentSort) {
+        case 'price-asc':
+          return a.price - b.price;
+        case 'price-desc':
+          return b.price - a.price;
+        case 'name-asc':
+          return a.name.localeCompare(b.name);
+        case 'name-desc':
+          return b.name.localeCompare(a.name);
+        case 'default':
+        default:
+          return a.id - b.id;
+      }
+    });
+
+    // 4. Actualizar contador de resultados
+    if (DOM.resultsCount) {
+      DOM.resultsCount.innerHTML = `Mostrando <strong>${filtered.length}</strong> de <strong>${PRODUCTS.length}</strong> modelos`;
+    }
+
+    // 5. Manejo de estado vacío
+    if (filtered.length === 0) {
+      DOM.productsGrid.innerHTML = '';
+      if (DOM.catalogEmpty) DOM.catalogEmpty.classList.add('is-visible');
+      return;
+    } else {
+      if (DOM.catalogEmpty) DOM.catalogEmpty.classList.remove('is-visible');
+    }
+
+    // 6. Construcción HTML de tarjetas de productos
+    const cardsHTML = filtered.map(product => {
+      const isFav = favorites.includes(product.id);
+      return `
+        <article class="product-card" data-id="${product.id}">
+          <div class="card-img-container">
+            ${product.tag ? `<span class="card-badge ${product.tagClass}">${product.tag}</span>` : ''}
+            
+            <button 
+              type="button" 
+              class="fav-btn ${isFav ? 'is-favorite' : ''}" 
+              data-action="toggle-fav" 
+              data-id="${product.id}"
+              aria-label="${isFav ? 'Quitar de favoritos' : 'Añadir a favoritos'}"
+              title="${isFav ? 'Quitar de favoritos' : 'Añadir a favoritos'}"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </button>
+
+            <img 
+              src="${product.image}" 
+              alt="${product.name} — Reloj ${product.category}" 
+              class="card-img" 
+              loading="lazy"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80';"
+            />
+
+            <button 
+              type="button" 
+              class="quick-view-btn" 
+              data-action="quick-view" 
+              data-id="${product.id}"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              Vista Rápida
+            </button>
+          </div>
+
+          <div class="card-body">
+            <span class="card-category">${product.category}</span>
+            <h3 class="card-title">${product.name}</h3>
+            <p class="card-desc">${product.description}</p>
+
+            <div class="card-footer">
+              <div class="card-price-wrap">
+                <span class="price-label">Precio</span>
+                <span class="card-price">${currencyFormatter.format(product.price)}</span>
+              </div>
+              <button 
+                type="button" 
+                class="add-cart-btn" 
+                data-action="add-cart" 
+                data-id="${product.id}" 
+                aria-label="Añadir ${product.name} al carrito"
+                title="Añadir al carrito"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+                  <path d="M3 6h18"/>
+                  <path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('');
+
+    DOM.productsGrid.innerHTML = cardsHTML;
+  }
+
+  // --------------------------------------------------------------------------
+  // 6. GESTIÓN DEL CARRITO DE COMPRAS
+  // --------------------------------------------------------------------------
+  /**
+   * Añade un producto al carrito o incrementa su cantidad
+   * (Cumple con la especificación técnica: addToCart(id))
+   */
+  function addToCart(productId, qtyToAdd = 1) {
+    const id = parseInt(productId, 10);
+    const product = PRODUCTS.find(p => p.id === id);
+    if (!product) return;
+
+    const existingIndex = cart.findIndex(item => item.id === id);
+    if (existingIndex > -1) {
+      cart[existingIndex].quantity += qtyToAdd;
+    } else {
+      cart.push({
+        id: id,
+        quantity: qtyToAdd
+      });
+    }
+
+    saveCart();
+    animateCounterBadge(DOM.cartCountBadge);
+    showToast(`"${product.name}" añadido al carrito`);
+  }
+
+  /**
+   * Modifica la cantidad de un producto en el carrito
+   */
+  function updateCartQuantity(productId, delta) {
+    const id = parseInt(productId, 10);
+    const existingIndex = cart.findIndex(item => item.id === id);
+    if (existingIndex === -1) return;
+
+    cart[existingIndex].quantity += delta;
+    if (cart[existingIndex].quantity <= 0) {
+      removeFromCart(id);
+      return;
+    }
+
+    saveCart();
+  }
+
+  /**
+   * Elimina un producto del carrito
+   */
+  function removeFromCart(productId) {
+    const id = parseInt(productId, 10);
+    const product = PRODUCTS.find(p => p.id === id);
+    cart = cart.filter(item => item.id !== id);
+    saveCart();
+    if (product) {
+      showToast(`Se retiró "${product.name}" del carrito`);
+    }
+  }
+
+  /**
+   * Dibuja los elementos del carrito, actualiza subtotales y contadores
+   * (Cumple con la especificación técnica: renderCart())
+   */
+  function renderCart() {
+    const totalItemsCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+
+    // Actualizar badge en header
+    if (DOM.cartCountBadge) {
+      DOM.cartCountBadge.textContent = totalItemsCount;
+      if (totalItemsCount > 0) {
+        DOM.cartCountBadge.classList.remove('hidden');
+      } else {
+        DOM.cartCountBadge.classList.add('hidden');
+      }
+    }
+
+    // Actualizar contador en header del drawer
+    if (DOM.drawerCartCount) {
+      DOM.drawerCartCount.textContent = `${totalItemsCount} ${totalItemsCount === 1 ? 'artículo' : 'artículos'}`;
+    }
+
+    // Renderizar cuerpo del carrito
+    if (!DOM.cartItemsBody) return;
+
+    if (cart.length === 0) {
+      DOM.cartItemsBody.innerHTML = '';
+      if (DOM.cartEmptyState) DOM.cartEmptyState.classList.add('is-visible');
+      if (DOM.cartSubtotal) DOM.cartSubtotal.textContent = currencyFormatter.format(0);
+      if (DOM.cartTotal) DOM.cartTotal.textContent = currencyFormatter.format(0);
+      if (DOM.checkoutBtn) DOM.checkoutBtn.disabled = true;
+      return;
+    }
+
+    if (DOM.cartEmptyState) DOM.cartEmptyState.classList.remove('is-visible');
+    if (DOM.checkoutBtn) DOM.checkoutBtn.disabled = false;
+
+    let subtotal = 0;
+    const itemsHTML = cart.map(item => {
+      const product = PRODUCTS.find(p => p.id === item.id);
+      if (!product) return '';
+
+      const itemTotal = product.price * item.quantity;
+      subtotal += itemTotal;
+
+      return `
+        <div class="cart-item" data-id="${product.id}">
+          <img src="${product.image}" alt="${product.name}" class="cart-item-img" />
+          
+          <div class="cart-item-info">
+            <span class="cart-item-category">${product.category}</span>
+            <span class="cart-item-title">${product.name}</span>
+            <span class="cart-item-price">${currencyFormatter.format(product.price)} c/u</span>
+
+            <div class="qty-controls">
+              <button type="button" class="qty-btn" data-action="cart-decrease" data-id="${product.id}" aria-label="Reducir cantidad">−</button>
+              <span class="qty-value">${item.quantity}</span>
+              <button type="button" class="qty-btn" data-action="cart-increase" data-id="${product.id}" aria-label="Aumentar cantidad">+</button>
+            </div>
+          </div>
+
+          <div class="cart-item-actions">
+            <span class="item-total-price">${currencyFormatter.format(itemTotal)}</span>
+            <button type="button" class="delete-item-btn" data-action="cart-delete" data-id="${product.id}" aria-label="Eliminar producto">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6h18"/>
+                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    DOM.cartItemsBody.innerHTML = itemsHTML;
+
+    if (DOM.cartSubtotal) DOM.cartSubtotal.textContent = currencyFormatter.format(subtotal);
+    if (DOM.cartTotal) DOM.cartTotal.textContent = currencyFormatter.format(subtotal);
+  }
+
+  /**
+   * Abre el panel lateral del carrito
+   * (Cumple con la especificación técnica: openCart())
+   */
+  function openCart() {
+    closeFavorites();
+    if (DOM.cartDrawer) DOM.cartDrawer.classList.add('is-open');
+    if (DOM.drawerBackdrop) DOM.drawerBackdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  /**
+   * Cierra el panel lateral del carrito
+   * (Cumple con la especificación técnica: closeCart())
+   */
+  function closeCart() {
+    if (DOM.cartDrawer) DOM.cartDrawer.classList.remove('is-open');
+    if (!DOM.favoritesDrawer || !DOM.favoritesDrawer.classList.contains('is-open')) {
+      if (DOM.drawerBackdrop) DOM.drawerBackdrop.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // 7. GESTIÓN DE FAVORITOS
+  // --------------------------------------------------------------------------
+  function toggleFavorite(productId) {
+    const id = parseInt(productId, 10);
+    const product = PRODUCTS.find(p => p.id === id);
+    if (!product) return;
+
+    const index = favorites.indexOf(id);
+    if (index > -1) {
+      favorites.splice(index, 1);
+      showToast(`Se quitó "${product.name}" de tus favoritos`);
+    } else {
+      favorites.push(id);
+      showToast(`"${product.name}" se guardó en tus favoritos`);
+      animateCounterBadge(DOM.favCountBadge);
+    }
+
+    saveFavorites();
+    renderProducts();
+  }
+
+  function updateFavoritesBadges() {
+    const count = favorites.length;
+    if (DOM.favCountBadge) {
+      DOM.favCountBadge.textContent = count;
+      if (count > 0) {
+        DOM.favCountBadge.classList.remove('hidden');
+      } else {
+        DOM.favCountBadge.classList.add('hidden');
+      }
+    }
+    if (DOM.drawerFavCount) {
+      DOM.drawerFavCount.textContent = `${count} ${count === 1 ? 'pieza' : 'piezas'}`;
+    }
+  }
+
+  function renderFavorites() {
+    if (!DOM.favItemsBody) return;
+
+    if (favorites.length === 0) {
+      DOM.favItemsBody.innerHTML = '';
+      if (DOM.favEmptyState) DOM.favEmptyState.classList.add('is-visible');
+      return;
+    }
+
+    if (DOM.favEmptyState) DOM.favEmptyState.classList.remove('is-visible');
+
+    const favsHTML = favorites.map(id => {
+      const product = PRODUCTS.find(p => p.id === id);
+      if (!product) return '';
+
+      return `
+        <div class="cart-item" data-id="${product.id}">
+          <img src="${product.image}" alt="${product.name}" class="cart-item-img" />
+          
+          <div class="cart-item-info">
+            <span class="cart-item-category">${product.category}</span>
+            <span class="cart-item-title">${product.name}</span>
+            <span class="cart-item-price">${currencyFormatter.format(product.price)}</span>
+            
+            <button 
+              type="button" 
+              class="btn btn-primary" 
+              style="padding: 0.4rem 0.8rem; font-size: 0.75rem; margin-top: 0.5rem; width: fit-content;" 
+              data-action="fav-to-cart" 
+              data-id="${product.id}"
+            >
+              Mover al Carrito
+            </button>
+          </div>
+
+          <div class="cart-item-actions">
+            <button type="button" class="delete-item-btn" data-action="toggle-fav" data-id="${product.id}" aria-label="Quitar de favoritos" title="Quitar de favoritos">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6 6 18M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    DOM.favItemsBody.innerHTML = favsHTML;
+  }
+
+  function openFavorites() {
+    closeCart();
+    renderFavorites();
+    if (DOM.favoritesDrawer) DOM.favoritesDrawer.classList.add('is-open');
+    if (DOM.drawerBackdrop) DOM.drawerBackdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeFavorites() {
+    if (DOM.favoritesDrawer) DOM.favoritesDrawer.classList.remove('is-open');
+    if (!DOM.cartDrawer || !DOM.cartDrawer.classList.contains('is-open')) {
+      if (DOM.drawerBackdrop) DOM.drawerBackdrop.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // 8. MODAL DE VISTA RÁPIDA (QUICK VIEW)
+  // --------------------------------------------------------------------------
+  function openQuickView(productId) {
+    const id = parseInt(productId, 10);
+    const product = PRODUCTS.find(p => p.id === id);
+    if (!product || !DOM.quickViewBody || !DOM.quickViewModal) return;
+
+    const isFav = favorites.includes(product.id);
+
+    DOM.quickViewBody.innerHTML = `
+      <div class="quick-view-grid">
+        <div class="qv-image">
+          <img src="${product.image}" alt="${product.name}" />
+        </div>
+        
+        <div class="qv-details">
+          <span class="card-category">${product.category}</span>
+          <h2 style="font-family: var(--font-serif); font-size: 1.75rem; margin-bottom: 0.5rem; color: var(--color-carbon);">${product.name}</h2>
+          <div style="font-size: 1.4rem; font-weight: 700; color: var(--color-dorado); margin-bottom: 1rem;">
+            ${currencyFormatter.format(product.price)} COP
+          </div>
+          <p style="font-size: 0.9375rem; color: var(--color-carbon-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+            ${product.description}
+          </p>
+
+          <div class="qv-specs-list">
+            <div class="qv-spec-item">
+              <strong>Diámetro de caja</strong>
+              <span>${product.specs.diameter}</span>
+            </div>
+            <div class="qv-spec-item">
+              <strong>Material</strong>
+              <span>${product.specs.case}</span>
+            </div>
+            <div class="qv-spec-item">
+              <strong>Hermeticidad</strong>
+              <span>${product.specs.waterResistance}</span>
+            </div>
+            <div class="qv-spec-item">
+              <strong>Cristal</strong>
+              <span>${product.specs.crystal}</span>
+            </div>
+            <div class="qv-spec-item">
+              <strong>Mecanismo</strong>
+              <span>${product.specs.movement}</span>
+            </div>
+            <div class="qv-spec-item">
+              <strong>Correa</strong>
+              <span>${product.specs.strap}</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; margin-top: auto; padding-top: 1rem;">
+            <button 
+              type="button" 
+              class="btn btn-primary" 
+              style="flex: 1;"
+              data-action="qv-add-to-cart" 
+              data-id="${product.id}"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+                <path d="M3 6h18"/>
+                <path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+              Añadir al Carrito
+            </button>
+            <button 
+              type="button" 
+              class="action-btn" 
+              data-action="toggle-fav" 
+              data-id="${product.id}" 
+              style="border: 1px solid var(--color-borde); width: 48px; height: 48px;"
+              title="Añadir a favoritos"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="${isFav ? 'var(--color-error)' : 'none'}" stroke="${isFav ? 'var(--color-error)' : 'currentColor'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    DOM.quickViewModal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeQuickView() {
+    if (DOM.quickViewModal) DOM.quickViewModal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  // --------------------------------------------------------------------------
+  // 9. MODALES GENERALES (showModal(title, text))
+  // --------------------------------------------------------------------------
+  /**
+   * Presenta información en una ventana emergente
+   * (Cumple con la especificación técnica: showModal(title, text))
+   */
+  function showModal(title, text) {
+    if (!DOM.modalOverlay || !DOM.modalTitle || !DOM.modalBody) return;
+    DOM.modalTitle.textContent = title;
+    DOM.modalBody.innerHTML = typeof text === 'string' ? `<p>${text}</p>` : text;
+    DOM.modalOverlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (DOM.modalOverlay) DOM.modalOverlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  // --------------------------------------------------------------------------
+  // 10. NOTIFICACIONES FLOTANTES (showToast(message))
+  // --------------------------------------------------------------------------
+  /**
+   * Muestra mensajes breves de confirmación
+   * (Cumple con la especificación técnica: showToast(message))
+   */
+  function showToast(message) {
+    if (!DOM.toastContainer) return;
+
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.setAttribute('role', 'status');
+    toast.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6 9 17l-5-5"/>
+      </svg>
+      <span>${message}</span>
+    `;
+
+    DOM.toastContainer.appendChild(toast);
+
+    setTimeout(() => {
+      toast.remove();
+    }, 4000);
+  }
+
+  function animateCounterBadge(badgeEl) {
+    if (!badgeEl) return;
+    badgeEl.classList.add('bounce');
+    setTimeout(() => {
+      badgeEl.classList.remove('bounce');
+    }, 300);
+  }
+
+  // --------------------------------------------------------------------------
+  // 11. MANEJADORES DE EVENTOS
+  // --------------------------------------------------------------------------
+  function setupEventListeners() {
+    // 1. Delegación de clics en el catálogo
+    if (DOM.productsGrid) {
+      DOM.productsGrid.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-action]');
+        if (!btn) return;
+
+        const action = btn.dataset.action;
+        const productId = btn.dataset.id;
+
+        if (action === 'add-cart') {
+          addToCart(productId, 1);
+        } else if (action === 'toggle-fav') {
+          toggleFavorite(productId);
+        } else if (action === 'quick-view') {
+          openQuickView(productId);
+        }
+      });
+    }
+
+    // 2. Filtros por categoría
+    DOM.categoryButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        DOM.categoryButtons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        currentCategory = btn.dataset.category || 'Todos';
+        renderProducts();
+      });
+    });
+
+    // 3. Búsqueda en tiempo real
+    if (DOM.searchInput) {
+      DOM.searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        if (DOM.clearSearchBtn) {
+          DOM.clearSearchBtn.style.display = searchQuery ? 'block' : 'none';
+        }
+        renderProducts();
+      });
+    }
+
+    if (DOM.clearSearchBtn) {
+      DOM.clearSearchBtn.addEventListener('click', () => {
+        DOM.searchInput.value = '';
+        searchQuery = '';
+        DOM.clearSearchBtn.style.display = 'none';
+        renderProducts();
+        DOM.searchInput.focus();
+      });
+    }
+
+    // 4. Ordenamiento
+    if (DOM.sortSelect) {
+      DOM.sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        renderProducts();
+      });
+    }
+
+    // 5. Botón para restablecer filtros cuando hay 0 resultados
+    if (DOM.resetFiltersBtn) {
+      DOM.resetFiltersBtn.addEventListener('click', () => {
+        currentCategory = 'Todos';
+        searchQuery = '';
+        currentSort = 'default';
+
+        if (DOM.searchInput) DOM.searchInput.value = '';
+        if (DOM.clearSearchBtn) DOM.clearSearchBtn.style.display = 'none';
+        if (DOM.sortSelect) DOM.sortSelect.value = 'default';
+
+        DOM.categoryButtons.forEach(b => {
+          b.classList.toggle('is-active', b.dataset.category === 'Todos');
+        });
+
+        renderProducts();
+      });
+    }
+
+    // 6. Acciones del Carrito (Abrir, Cerrar, Backdrop)
+    if (DOM.cartToggleBtn) DOM.cartToggleBtn.addEventListener('click', openCart);
+    if (DOM.cartCloseBtn) DOM.cartCloseBtn.addEventListener('click', closeCart);
+
+    if (DOM.favToggleBtn) DOM.favToggleBtn.addEventListener('click', openFavorites);
+    if (DOM.favCloseBtn) DOM.favCloseBtn.addEventListener('click', closeFavorites);
+
+    if (DOM.drawerBackdrop) {
+      DOM.drawerBackdrop.addEventListener('click', () => {
+        closeCart();
+        closeFavorites();
+      });
+    }
+
+    // 7. Delegación de eventos dentro del Carrito
+    if (DOM.cartItemsBody) {
+      DOM.cartItemsBody.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-action]');
+        if (!btn) return;
+
+        const action = btn.dataset.action;
+        const productId = btn.dataset.id;
+
+        if (action === 'cart-increase') {
+          updateCartQuantity(productId, 1);
+        } else if (action === 'cart-decrease') {
+          updateCartQuantity(productId, -1);
+        } else if (action === 'cart-delete') {
+          removeFromCart(productId);
+        }
+      });
+    }
+
+    // 8. Delegación de eventos dentro de Favoritos
+    if (DOM.favItemsBody) {
+      DOM.favItemsBody.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-action]');
+        if (!btn) return;
+
+        const action = btn.dataset.action;
+        const productId = btn.dataset.id;
+
+        if (action === 'fav-to-cart') {
+          addToCart(productId, 1);
+          toggleFavorite(productId);
+          openCart();
+        } else if (action === 'toggle-fav') {
+          toggleFavorite(productId);
+        }
+      });
+    }
+
+    // 9. Delegación en Quick View
+    if (DOM.quickViewBody) {
+      DOM.quickViewBody.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-action]');
+        if (!btn) return;
+
+        const action = btn.dataset.action;
+        const productId = btn.dataset.id;
+
+        if (action === 'qv-add-to-cart') {
+          addToCart(productId, 1);
+          closeQuickView();
+        } else if (action === 'toggle-fav') {
+          toggleFavorite(productId);
+          openQuickView(productId);
+        }
+      });
+    }
+
+    if (DOM.quickViewCloseBtn) DOM.quickViewCloseBtn.addEventListener('click', closeQuickView);
+    if (DOM.quickViewModal) {
+      DOM.quickViewModal.addEventListener('click', (e) => {
+        if (e.target === DOM.quickViewModal) closeQuickView();
+      });
+    }
+
+    // 10. Modales generales
+    if (DOM.modalCloseBtn) DOM.modalCloseBtn.addEventListener('click', closeModal);
+    if (DOM.modalOkBtn) DOM.modalOkBtn.addEventListener('click', closeModal);
+    if (DOM.modalOverlay) {
+      DOM.modalOverlay.addEventListener('click', (e) => {
+        if (e.target === DOM.modalOverlay) closeModal();
+      });
+    }
+
+    // 11. Proceder al pago (Checkout demostrativo)
+    if (DOM.checkoutBtn) {
+      DOM.checkoutBtn.addEventListener('click', () => {
+        closeCart();
+        const subtotal = cart.reduce((acc, item) => {
+          const p = PRODUCTS.find(prod => prod.id === item.id);
+          return acc + (p ? p.price * item.quantity : 0);
+        }, 0);
+
+        showModal(
+          "Proceso de compra demostrativo",
+          `
+            <p style="margin-bottom: 1rem;">
+              Has iniciado el proceso de compra para un total de <strong>${currencyFormatter.format(subtotal)} COP</strong>.
+            </p>
+            <div style="background-color: var(--color-arena-soft); border-left: 4px solid var(--color-dorado); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.875rem;">
+              <strong>Aviso de prototipo:</strong> De acuerdo con la especificación técnica de RelojNori, este proyecto es un frontend interactivo de demostración. No se procesan transacciones reales ni se recopilan datos bancarios.
+            </div>
+            <p style="font-size: 0.875rem;">
+              En una siguiente fase de integración, este botón conectará de forma segura con la pasarela de pagos oficial (como Wompi, PayU o Stripe) y un sistema backend para procesar el pedido.
+            </p>
+          `
+        );
+      });
+    }
+
+    // 12. Formulario de Newsletter (Novedades)
+    if (DOM.newsletterForm) {
+      DOM.newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = DOM.newsletterEmail.value.trim();
+        if (!email) return;
+
+        DOM.newsletterEmail.value = '';
+        showToast("¡Gracias por suscribirte al Círculo RelojNori!");
+        showModal(
+          "Suscripción confirmada",
+          `¡Bienvenido a la comunidad RelojNori! El correo <strong>${email}</strong> ha sido registrado satisfactoriamente para recibir avances de nuevas colecciones e invitaciones exclusivas.`
+        );
+      });
+    }
+
+    // 13. Menú móvil hamburguesa
+    if (DOM.menuToggleBtn && DOM.mainNav) {
+      DOM.menuToggleBtn.addEventListener('click', () => {
+        DOM.mainNav.classList.toggle('is-mobile-open');
+      });
+
+      DOM.mainNav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          DOM.mainNav.classList.remove('is-mobile-open');
+        });
+      });
+    }
+
+    // 14. Cerrar con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCart();
+        closeFavorites();
+        closeQuickView();
+        closeModal();
+      }
+    });
+
+    // 15. Header sombreado al hacer scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.site-header');
+      if (!header) return;
+      if (window.scrollY > 30) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // 12. INICIALIZACIÓN DE LA APLICACIÓN
+  // --------------------------------------------------------------------------
+  function init() {
+    initLocalStorage();
+    renderProducts();
+    renderCart();
+    updateFavoritesBadges();
+    setupEventListeners();
+  }
+
+  // Exponer funciones en el ámbito global window para RelojNori y compatibilidad
+  window.RELOJNORI = {
+    renderProducts,
+    addToCart,
+    renderCart,
+    saveCart,
+    openCart,
+    closeCart,
+    showToast,
+    showModal,
+    toggleFavorite,
+    openFavorites,
+    closeFavorites,
+    openQuickView,
+    closeQuickView
+  };
+  window.NORDI = window.RELOJNORI;
+
+  // Asignar funciones globales según se especifica en la sección 6
+  window.renderProducts = renderProducts;
+  window.addToCart = addToCart;
+  window.renderCart = renderCart;
+  window.saveCart = saveCart;
+  window.openCart = openCart;
+  window.closeCart = closeCart;
+  window.showToast = showToast;
+  window.showModal = showModal;
+
+  // Arrancar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+</script>
+</body>
+</html>

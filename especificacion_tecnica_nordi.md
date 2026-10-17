@@ -1,4 +1,4 @@
-# Especificación técnica frontend — Tienda virtual de relojes NÓRDI
+# Especificación técnica frontend — Tienda virtual de relojes RelojNori
 
 **Versión:** 1.0  
 **Fecha:** 17 de octubre de 2026  
@@ -7,7 +7,7 @@
 
 ## 1. Descripción general
 
-NÓRDI es una propuesta de tienda virtual de relojes enfocada en una experiencia de usuario sencilla, elegante y adaptable a diferentes dispositivos. El sitio permite explorar un catálogo de demostración, buscar productos, filtrar por categorías, ordenar resultados, marcar favoritos y administrar un carrito de compras local.
+RelojNori es una propuesta de tienda virtual de relojes enfocada en una experiencia de usuario sencilla, elegante y adaptable a diferentes dispositivos. El sitio permite explorar un catálogo de demostración, buscar productos, filtrar por categorías, ordenar resultados, marcar favoritos y administrar un carrito de compras local.
 
 El proyecto se limita al frontend. No incluye servidor, base de datos, autenticación real ni procesamiento de pagos.
 
@@ -50,7 +50,7 @@ Enlaces de referencia:
 
 ## 4. Identidad visual propuesta
 
-**Nombre provisional:** NÓRDI — Relojes con carácter.
+**Nombre:** RelojNori — Relojes con carácter.
 
 **Estilo:** minimalista, elegante, contemporáneo y orientado al producto.
 
@@ -238,6 +238,6 @@ Las imágenes se cargan desde URLs externas; para producción conviene comprobar
 
 ## 13. Conclusión
 
-NÓRDI constituye una base frontend funcional para una tienda virtual de relojes. Su diseño prioriza la presentación del catálogo y la facilidad de uso, mientras que JavaScript añade interacciones sin necesidad de frameworks. El proyecto puede ejecutarse localmente y ampliarse de forma gradual.
+RelojNori constituye una base frontend funcional para una tienda virtual de relojes. Su diseño prioriza la presentación del catálogo y la facilidad de uso, mientras que JavaScript añade interacciones sin necesidad de frameworks. El proyecto puede ejecutarse localmente y ampliarse de forma gradual.
 
 Antes de utilizarlo como tienda comercial, es necesario sustituir los datos de ejemplo, verificar los derechos de las imágenes, definir las políticas de venta y conectar los servicios necesarios para gestionar pedidos y pagos de manera segura.

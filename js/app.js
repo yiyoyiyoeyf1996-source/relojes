@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * NÓRDI — Tienda Virtual de Relojes
+ * RelojNori — Tienda Virtual de Relojes
  * Archivo principal de JavaScript (Vanilla JavaScript)
  * Funcionalidad: Catálogo, Búsqueda, Filtros, Orden, Carrito, Favoritos,
  *                Modales y Toasts informativos con persistencia en localStorage.
@@ -11,12 +11,12 @@
   'use strict';
 
   // --------------------------------------------------------------------------
-  // 1. DATOS DE DEMOSTRACIÓN (8 PRODUCTOS DE EJEMPLO)
+  // 1. DATOS DE DEMOSTRACIÓN (8 PRODUCTOS DE EJEMPLO RELOJNORI)
   // --------------------------------------------------------------------------
   const PRODUCTS = [
     {
       id: 1,
-      name: "NÓRDI Chrono Diver 300",
+      name: "RelojNori Chrono Diver 300",
       category: "Deportivos",
       price: 1450000,
       tag: "Más Vendido",
@@ -34,7 +34,7 @@
     },
     {
       id: 2,
-      name: "NÓRDI Stella Minimal Gold",
+      name: "RelojNori Stella Minimal Gold",
       category: "Minimalistas",
       price: 980000,
       tag: "Nuevo",
@@ -52,7 +52,7 @@
     },
     {
       id: 3,
-      name: "NÓRDI Heritage Automatic",
+      name: "RelojNori Heritage Automatic",
       category: "Clásicos",
       price: 1890000,
       tag: "Edición Limitada",
@@ -70,12 +70,12 @@
     },
     {
       id: 4,
-      name: "NÓRDI Midnight Obsidian",
+      name: "RelojNori Midnight Obsidian",
       category: "Elegantes",
       price: 1320000,
       tag: "Exclusivo",
       tagClass: "",
-      description: "Silueta monolítica monocromática en negro carbón con acabados cepillados a mano de inspiración nórdica.",
+      description: "Silueta monolítica monocromática en negro carbón con acabados cepillados a mano de alta relojería.",
       image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=800&q=80",
       specs: {
         diameter: "41 mm",
@@ -88,7 +88,7 @@
     },
     {
       id: 5,
-      name: "NÓRDI Aero Racing GMT",
+      name: "RelojNori Aero Racing GMT",
       category: "Deportivos",
       price: 1650000,
       tag: "Nuevo",
@@ -106,7 +106,7 @@
     },
     {
       id: 6,
-      name: "NÓRDI Bauhaus Mono",
+      name: "RelojNori Bauhaus Mono",
       category: "Minimalistas",
       price: 890000,
       tag: "Más Vendido",
@@ -124,12 +124,12 @@
     },
     {
       id: 7,
-      name: "NÓRDI Grand Classic Vintage",
+      name: "RelojNori Grand Classic Vintage",
       category: "Clásicos",
       price: 2100000,
       tag: "Edición Limitada",
       tagClass: "badge-limited",
-      description: "Tributo a la relojería de mediados del siglo XX con detalles dorados cálidos y agujas dauphine facetadas.",
+      description: "Tributo a la relojería clásica con detalles dorados cálidos y agujas dauphine facetadas.",
       image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=800&q=80",
       specs: {
         diameter: "39.5 mm",
@@ -142,12 +142,12 @@
     },
     {
       id: 8,
-      name: "NÓRDI Royale Skeleton Dial",
+      name: "RelojNori Royale Skeleton Dial",
       category: "Elegantes",
       price: 2480000,
       tag: "Exclusivo",
       tagClass: "",
-      description: "Esfera esqueletizada que expone el movimiento mecánico palpitante y el volante oscilante con acabados Côtes de Genève.",
+      description: "Esfera esqueletizada que expone el movimiento mecánico palpitante y el volante oscilante con acabados de alta manufactura.",
       image: "https://images.unsplash.com/photo-1511370235399-1802cae1d32f?auto=format&fit=crop&w=800&q=80",
       specs: {
         diameter: "41.5 mm",
@@ -239,11 +239,11 @@
   };
 
   // --------------------------------------------------------------------------
-  // 4. PERSISTENCIA EN LOCALSTORAGE
+  // 4. PERSISTENCIA EN LOCALSTORAGE (RelojNori)
   // --------------------------------------------------------------------------
   function initLocalStorage() {
     try {
-      const storedCart = localStorage.getItem('nordi_cart');
+      const storedCart = localStorage.getItem('relojnori_cart') || localStorage.getItem('nordi_cart');
       if (storedCart) {
         cart = JSON.parse(storedCart);
       }
@@ -253,7 +253,7 @@
     }
 
     try {
-      const storedFavs = localStorage.getItem('nordi_favorites');
+      const storedFavs = localStorage.getItem('relojnori_favorites') || localStorage.getItem('nordi_favorites');
       if (storedFavs) {
         favorites = JSON.parse(storedFavs);
       }
@@ -269,7 +269,7 @@
    */
   function saveCart() {
     try {
-      localStorage.setItem('nordi_cart', JSON.stringify(cart));
+      localStorage.setItem('relojnori_cart', JSON.stringify(cart));
     } catch (e) {
       console.warn('Error al guardar carrito en localStorage:', e);
     }
@@ -278,7 +278,7 @@
 
   function saveFavorites() {
     try {
-      localStorage.setItem('nordi_favorites', JSON.stringify(favorites));
+      localStorage.setItem('relojnori_favorites', JSON.stringify(favorites));
     } catch (e) {
       console.warn('Error al guardar favoritos en localStorage:', e);
     }
@@ -980,7 +980,7 @@
           closeQuickView();
         } else if (action === 'toggle-fav') {
           toggleFavorite(productId);
-          openQuickView(productId); // re-render icons
+          openQuickView(productId);
         }
       });
     }
@@ -1017,7 +1017,7 @@
               Has iniciado el proceso de compra para un total de <strong>${currencyFormatter.format(subtotal)} COP</strong>.
             </p>
             <div style="background-color: var(--color-arena-soft); border-left: 4px solid var(--color-dorado); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.875rem;">
-              <strong>Aviso de prototipo:</strong> De acuerdo con la especificación técnica de NÓRDI, este proyecto es un frontend interactivo de demostración. No se procesan transacciones reales ni se recopilan datos bancarios.
+              <strong>Aviso de prototipo:</strong> De acuerdo con la especificación técnica de RelojNori, este proyecto es un frontend interactivo de demostración. No se procesan transacciones reales ni se recopilan datos bancarios.
             </div>
             <p style="font-size: 0.875rem;">
               En una siguiente fase de integración, este botón conectará de forma segura con la pasarela de pagos oficial (como Wompi, PayU o Stripe) y un sistema backend para procesar el pedido.
@@ -1035,10 +1035,10 @@
         if (!email) return;
 
         DOM.newsletterEmail.value = '';
-        showToast("¡Gracias por suscribirte al Círculo NÓRDI!");
+        showToast("¡Gracias por suscribirte al Círculo RelojNori!");
         showModal(
           "Suscripción confirmada",
-          `¡Bienvenido a la comunidad NÓRDI! El correo <strong>${email}</strong> ha sido registrado satisfactoriamente para recibir avances de nuevas colecciones e invitaciones exclusivas.`
+          `¡Bienvenido a la comunidad RelojNori! El correo <strong>${email}</strong> ha sido registrado satisfactoriamente para recibir avances de nuevas colecciones e invitaciones exclusivas.`
         );
       });
     }
@@ -1049,7 +1049,6 @@
         DOM.mainNav.classList.toggle('is-mobile-open');
       });
 
-      // Cerrar menú al hacer clic en un enlace
       DOM.mainNav.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
           DOM.mainNav.classList.remove('is-mobile-open');
@@ -1090,8 +1089,8 @@
     setupEventListeners();
   }
 
-  // Exponer funciones en el ámbito global window para cumplir fielmente la spec
-  window.NORDI = {
+  // Exponer funciones en el ámbito global window para RelojNori y compatibilidad
+  window.RELOJNORI = {
     renderProducts,
     addToCart,
     renderCart,
@@ -1106,6 +1105,7 @@
     openQuickView,
     closeQuickView
   };
+  window.NORDI = window.RELOJNORI;
 
   // Asignar funciones globales según se especifica en la sección 6
   window.renderProducts = renderProducts;

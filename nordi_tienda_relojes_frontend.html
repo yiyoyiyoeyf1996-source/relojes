@@ -6414,7 +6414,7 @@ ul, ol {
     assert('Campo Honeypot anti-spam presente', Boolean(elements.newsletterHp));
 
     // 3. Seguridad y Sanitización
-    const safeEscaped = Security.escapeHTML('<script>alert("xss")</script>');
+    const safeEscaped = Security.escapeHTML('<script>alert("xss")<' + '/script>');
     assert('escapeHTML neutraliza scripts XSS', safeEscaped === '&lt;script&gt;alert(&quot;xss&quot;)&lt;&#x2F;script&gt;');
     assert('isValidEmail acepta correos válidos', Security.isValidEmail('soporte@relojnori.com'));
     assert('isValidEmail rechaza correos maliciosos', !Security.isValidEmail('bad@spam\r\nBcc:foo@bar.com'));

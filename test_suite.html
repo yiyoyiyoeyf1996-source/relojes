@@ -1243,9 +1243,8 @@
     // SUITE 5: SEGURIDAD MULTINIVEL Y SANITIZACIÓN
     TestRunner.describe("Seguridad Multinivel y Anti-XSS", "SECURITY", ({ it }) => {
       it("escapeHTML debe neutralizar scripts maliciosos", () => {
-        const xss = '<script>alert("hack")</script>';
-        const clean = Security.escapeHTML(xss);
-        expect(clean).toBe('&lt;script&gt;alert(&quot;hack&quot;)&lt;&#x2F;script&gt;');
+        const xss = '<script>alert("hack")<' + '/script>';
+        expect(Security.escapeHTML(xss)).toBe('&lt;script&gt;alert(&quot;hack&quot;)&lt;&#x2F;script&gt;');
       });
 
       it("escapeHTML debe escapar comillas simples y ampersands", () => {

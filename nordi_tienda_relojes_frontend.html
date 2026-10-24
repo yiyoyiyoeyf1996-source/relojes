@@ -1,13 +1,128 @@
-﻿<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es-CO" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RelojNori — Relojes con carácter | Tienda Oficial</title>
-  <meta name="description" content="RelojNori es una tienda virtual de relojería minimalista y contemporánea. Descubre colecciones de relojes clásicos, deportivos, minimalistas y elegantes con envío asegurado a toda Colombia." />
   
+  <!-- ========================================================================
+       SEGURIDAD MULTINIVEL: HEADERS Y DIRECTIVAS DE PROTECCIÓN WEB
+       ======================================================================== -->
+  <!-- 1. Content Security Policy (CSP): Prevención de XSS e inyecciones -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://images.unsplash.com https://www.relojnori.com; connect-src 'self' https://api.whatsapp.com; media-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' javascript:; frame-ancestors 'none';" />
+
+  <!-- 2. Prevención de MIME-Sniffing -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+  <!-- 3. Prevención de Clickjacking / Framing -->
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+
+  <!-- 4. Política de Referrer para privacidad de navegación -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- 5. Permissions-Policy: Restricción de acceso a APIs de hardware innecesarias -->
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(self), accelerometer=(), gyroscope=(), magnetometer=(), payment=(self), usb=(), interest-cohort=()" />
+
+  <title>RelojNori — Relojes con Carácter | Tienda Oficial en Bogotá, Colombia</title>
+  <meta name="description" content="RelojNori: tienda oficial de relojería minimalista y contemporánea en Bogotá, Colombia. Relojes clásicos, deportivos, minimalistas y elegantes con garantía de 2 años y envío asegurado a toda Colombia. Visítanos en la Zona Rosa." />
+  
+  <!-- ========================================================================
+       SEO BÁSICO: Robots, Canonical y Verificaciones
+       ======================================================================== -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://www.relojnori.com/" />
+  <meta name="author" content="RelojNori Horlogerie" />
+  <meta name="publisher" content="RelojNori Horlogerie S.A.S." />
+  <meta name="copyright" content="© 2026 RelojNori Horlogerie. Todos los derechos reservados." />
+  <meta name="theme-color" content="#20231F" />
+
+  <!-- ========================================================================
+       SEO-GEO: Meta Tags Geográficas para Colombia / Bogotá
+       ======================================================================== -->
+  <meta name="geo.region" content="CO-DC" />
+  <meta name="geo.placename" content="Bogotá D.C., Colombia" />
+  <meta name="geo.position" content="4.6688;-74.0565" />
+  <meta name="ICBM" content="4.6688, -74.0565" />
+  <meta name="language" content="es-CO" />
+  <meta name="distribution" content="Colombia" />
+  <meta name="target" content="Colombia" />
+  <meta name="coverage" content="Colombia" />
+  <meta name="rating" content="General" />
+  <meta http-equiv="content-language" content="es-CO" />
+  
+  <!-- Idioma y región: hreflang para Google multi-regional -->
+  <link rel="alternate" hreflang="es-CO" href="https://www.relojnori.com/" />
+  <link rel="alternate" hreflang="es" href="https://www.relojnori.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.relojnori.com/" />
+
+  <!-- ========================================================================
+       AEO: Keywords semánticas y meta adicionales para motores de respuesta
+       ======================================================================== -->
+  <meta name="keywords" content="relojes Bogotá, tienda de relojes Colombia, relojería Zona Rosa, relojes minimalistas Colombia, relojes deportivos Colombia, relojes clásicos Bogotá, relojes elegantes, reloj hombre Colombia, reloj mujer Bogotá, RelojNori, horlogerie, relojería contemporánea, envío relojes Colombia, garantía relojes, relojes acero quirúrgico, relojes cristal zafiro" />
+  <meta name="subject" content="Tienda de relojes de diseño contemporáneo con envío a toda Colombia" />
+  <meta name="topic" content="Relojería contemporánea y minimalista" />
+  <meta name="classification" content="Tienda de Relojes / Joyería / E-Commerce" />
+  <meta name="category" content="Shopping > Watches > Luxury & Designer" />
+  <meta name="revisit-after" content="7 days" />
+
+  <!-- ========================================================================
+       OPEN GRAPH (Facebook, WhatsApp, LinkedIn, Telegram, Pinterest)
+       ======================================================================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RelojNori Horlogerie" />
+  <meta property="og:title" content="RelojNori — Relojes con Carácter | Tienda Oficial Colombia" />
+  <meta property="og:description" content="Descubre nuestra colección de relojes minimalistas, clásicos, deportivos y elegantes. Envío asegurado a toda Colombia y garantía oficial de 2 años. Visítanos en la Zona Rosa de Bogotá." />
+  <meta property="og:url" content="https://www.relojnori.com/" />
+  <meta property="og:image" content="https://www.relojnori.com/assets/og-relojnori-share.jpg" />
+  <meta property="og:image:secure_url" content="https://www.relojnori.com/assets/og-relojnori-share.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="RelojNori — Colección de relojes de diseño contemporáneo" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:updated_time" content="2026-10-24T15:00:00-05:00" />
+  
+  <!-- Open Graph E-Commerce / Namespace de Productos -->
+  <meta property="product:brand" content="RelojNori" />
+  <meta property="product:availability" content="in stock" />
+  <meta property="product:condition" content="new" />
+  <meta property="product:price:currency" content="COP" />
+  <meta property="product:price:amount" content="1450000" />
+  <meta property="product:retailer_item_id" content="RN-2026" />
+  <meta property="product:category" content="Apparel & Accessories > Jewelry > Watches" />
+  
+  <!-- Open Graph para negocio local y georreferencia -->
+  <meta property="business:contact_data:street_address" content="Calle 85 # 11-53" />
+  <meta property="business:contact_data:locality" content="Bogotá D.C." />
+  <meta property="business:contact_data:region" content="Cundinamarca" />
+  <meta property="business:contact_data:postal_code" content="110221" />
+  <meta property="business:contact_data:country_name" content="Colombia" />
+  <meta property="business:contact_data:email" content="soporte@relojnori.com" />
+  <meta property="business:contact_data:phone_number" content="+5716013904488" />
+  <meta property="business:contact_data:website" content="https://www.relojnori.com" />
+  <meta property="place:location:latitude" content="4.6688" />
+  <meta property="place:location:longitude" content="-74.0565" />
+
+  <!-- ========================================================================
+       TWITTER CARDS (X) CON PRODUCT DATA
+       ======================================================================== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@relojnori" />
+  <meta name="twitter:creator" content="@relojnori" />
+  <meta name="twitter:title" content="RelojNori — Relojes con Carácter | Bogotá, Colombia" />
+  <meta name="twitter:description" content="Relojería contemporánea con cristal de zafiro, acero quirúrgico 316L y envío asegurado a toda Colombia. Descubre la colección 2026." />
+  <meta name="twitter:image" content="https://www.relojnori.com/assets/og-relojnori-share.jpg" />
+  <meta name="twitter:image:alt" content="Colección de relojes RelojNori 2026" />
+  <meta name="twitter:label1" content="Precio" />
+  <meta name="twitter:data1" content="Desde $890.000 COP" />
+  <meta name="twitter:label2" content="Garantía Oficial" />
+  <meta name="twitter:data2" content="2 Años - Cobertura Colombia" />
+
   <!-- Favicon SVG con monograma RelojNori -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2320231F'/><text x='50' y='64' font-family='serif' font-size='36' fill='%23B98B55' text-anchor='middle' font-weight='bold'>RN</text></svg>" />
+  <link rel="apple-touch-icon" href="https://www.relojnori.com/assets/apple-touch-icon.png" />
 
   <!-- Tipografías de alta gama (Playfair Display + Plus Jakarta Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1937,19 +2052,59 @@ ul, ol {
 }
 
 /* --------------------------------------------------------------------------
-   15. RESPONSIVE DESIGN & MEDIA QUERIES
+   15. TIPOGRAFÍA FLUIDA Y ESPACIADO ADAPTATIVO
    -------------------------------------------------------------------------- */
-/* Dispositivos medianos (Tablets < 1024px) */
+.hero-title {
+  font-size: clamp(1.75rem, 5vw + 0.5rem, 3.5rem);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 4vw + 0.5rem, 2.5rem);
+}
+
+.newsletter-title {
+  font-size: clamp(1.4rem, 3.5vw + 0.5rem, 2.25rem);
+}
+
+.editorial-quote {
+  font-size: clamp(1.15rem, 2.5vw + 0.3rem, 1.6rem);
+}
+
+/* --------------------------------------------------------------------------
+   16. RESPONSIVE DESIGN & MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+
+/* --------- Desktop grande (≤ 1200px) --------- */
+@media (max-width: 1200px) {
+  .hero-grid {
+    gap: 2.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+    gap: 2rem;
+  }
+
+  .editorial-grid {
+    gap: 3rem;
+  }
+}
+
+/* --------- Tablets y notebooks (≤ 1024px) --------- */
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
     text-align: center;
   }
 
   .hero-content {
     max-width: 100%;
     margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    justify-content: center;
   }
 
   .hero-actions {
@@ -1961,7 +2116,12 @@ ul, ol {
   }
 
   .hero-card {
-    max-width: 380px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .hero-section {
+    padding: 3.5rem 0 4rem;
   }
 
   .products-grid {
@@ -1975,26 +2135,97 @@ ul, ol {
 
   .editorial-grid {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 3rem;
   }
 
   .editorial-content {
     padding-left: 0;
   }
 
+  .editorial-visual {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .catalog-section {
+    padding: 3.5rem 0;
+  }
+
+  .editorial-section {
+    padding: 4rem 0;
+  }
+
+  .newsletter-section {
+    padding: 3.5rem 0;
   }
 }
 
-/* Dispositivos móviles (< 768px) */
-@media (max-width: 768px) {
-  :root {
-    --header-height: 64px;
+/* --------- Tablets pequeñas (≤ 900px) --------- */
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 
+  .quick-view-box {
+    max-width: 95vw;
+  }
+
+  .quick-view-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .qv-image {
+    max-height: 280px;
+  }
+
+  .qv-specs-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .announcement-bar {
+    font-size: 0.6875rem;
+    padding: 0.5rem 0.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  .editorial-pillars {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --------- Dispositivos móviles (≤ 768px) --------- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 62px;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* === HEADER & NAVEGACIÓN === */
   .site-header {
     position: sticky;
+  }
+
+  .brand-logo .logo-main {
+    font-size: 1.5rem;
+    letter-spacing: 0.16em;
+  }
+
+  .brand-logo .logo-sub {
+    font-size: 0.5625rem;
+    letter-spacing: 0.22em;
+    margin-top: 2px;
   }
 
   .menu-toggle {
@@ -2010,6 +2241,7 @@ ul, ol {
     top: var(--header-height);
     left: 0;
     right: 0;
+    bottom: 0;
     background-color: var(--color-marfil);
     flex-direction: column;
     padding: 2rem 1.5rem;
@@ -2020,6 +2252,8 @@ ul, ol {
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-normal);
+    z-index: 99;
+    overflow-y: auto;
   }
 
   .main-nav.is-mobile-open {
@@ -2028,33 +2262,98 @@ ul, ol {
     visibility: visible;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 0.6rem 0;
+  }
+
+  .header-actions {
+    gap: 0.35rem;
+  }
+
+  .action-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* === HERO === */
+  .hero-section {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .hero-section::before {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -60px;
+  }
+
+  .hero-grid {
+    gap: 2rem;
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
   }
 
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  .hero-card {
+    max-width: 340px;
+    padding: 1rem;
   }
 
-  .card-body {
-    padding: 1rem 0.85rem 0.85rem;
+  .hero-card-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 
-  .card-title {
-    font-size: 1rem;
+  .hero-card-title {
+    font-size: 1.15rem;
   }
 
-  .card-price {
-    font-size: 1rem;
+  .hero-card-price {
+    font-size: 1.1rem;
   }
 
+  .hero-eyebrow {
+    font-size: 0.6875rem;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  /* === BENEFICIOS === */
+  .benefits-section {
+    padding: 2rem 0;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .benefit-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .benefit-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .benefit-title {
+    font-size: 0.875rem;
+  }
+
+  .benefit-desc {
+    font-size: 0.75rem;
+  }
+
+  /* === CATÁLOGO === */
   .catalog-toolbar {
     padding: 1rem;
+    gap: 1rem;
   }
 
   .toolbar-primary {
@@ -2064,6 +2363,12 @@ ul, ol {
 
   .search-wrapper {
     max-width: 100%;
+    min-width: unset;
+  }
+
+  .search-input {
+    font-size: 0.875rem;
+    padding: 0.65rem 2.5rem;
   }
 
   .sort-wrapper {
@@ -2071,59 +2376,805 @@ ul, ol {
     justify-content: space-between;
   }
 
-  .newsletter-box {
-    padding: 2.5rem 1.5rem;
+  .sort-select {
+    flex: 1;
+    min-width: 0;
   }
 
-  .newsletter-form {
+  .category-filters {
+    gap: 0.4rem;
+    padding-top: 0.75rem;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 0.25rem;
+  }
+
+  .category-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8125rem;
+  }
+
+  .results-info-bar {
     flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  /* === PRODUCT CARDS MOBILE === */
+  .card-body {
+    padding: 0.85rem 0.75rem 0.75rem;
+  }
+
+  .card-category {
+    font-size: 0.625rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .card-title {
+    font-size: 0.9375rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .card-desc {
+    font-size: 0.75rem;
+    margin-bottom: 0.85rem;
+    min-height: 2.1rem;
+  }
+
+  .card-footer {
+    padding-top: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .card-price {
+    font-size: 0.9375rem;
+  }
+
+  .price-label {
+    font-size: 0.625rem;
+  }
+
+  .add-cart-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .add-cart-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .fav-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .fav-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .card-badge {
+    font-size: 0.625rem;
+    padding: 0.25rem 0.5rem;
+    top: 0.6rem;
+    left: 0.6rem;
+  }
+
+  .quick-view-btn {
+    font-size: 0.6875rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  /* === EDITORIAL / SOBRE NOSOTROS === */
+  .editorial-section {
+    padding: 3.5rem 0;
   }
 
   .editorial-badge {
     position: static;
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
     max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .editorial-badge-number {
+    font-size: 1.75rem;
   }
 
   .editorial-pillars {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .quick-view-grid {
-    grid-template-columns: 1fr;
+  .editorial-body {
+    font-size: 0.9375rem;
+  }
+
+  .editorial-img-box {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* === NEWSLETTER === */
+  .newsletter-section {
+    padding: 3rem 0;
+  }
+
+  .newsletter-box {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .newsletter-input {
+    padding: 0.75rem 1rem;
+    font-size: 0.9375rem;
+  }
+
+  .newsletter-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .newsletter-disclaimer {
+    font-size: 0.6875rem;
+  }
+
+  /* === FOOTER === */
+  .site-footer {
+    padding: 3rem 0 1.5rem;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 2.25rem;
+    gap: 2rem;
   }
 
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  /* === DRAWERS (CARRITO & FAVORITOS) === */
   .cart-drawer, .favorites-drawer {
     max-width: 100%;
   }
+
+  .drawer-header {
+    padding: 1.25rem 1rem;
+  }
+
+  .drawer-title {
+    font-size: 1.15rem;
+  }
+
+  .cart-items-body {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .cart-item {
+    grid-template-columns: 60px 1fr auto;
+    gap: 0.75rem;
+  }
+
+  .cart-item-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cart-item-title {
+    font-size: 0.8125rem;
+  }
+
+  .cart-item-category {
+    font-size: 0.625rem;
+  }
+
+  .cart-item-price {
+    font-size: 0.8125rem;
+  }
+
+  .item-total-price {
+    font-size: 0.8125rem;
+  }
+
+  .drawer-footer {
+    padding: 1.25rem 1rem;
+  }
+
+  .cart-summary-row.total-row {
+    font-size: 1rem;
+  }
+
+  .cart-summary-row.total-row .total-amount {
+    font-size: 1.1rem;
+  }
+
+  /* === MODALES === */
+  .modal-overlay {
+    padding: 1rem;
+    align-items: flex-end;
+  }
+
+  .modal-box {
+    max-width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-header {
+    padding: 1.25rem 1rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-blanco);
+    z-index: 2;
+  }
+
+  .modal-body {
+    padding: 1.25rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .modal-footer {
+    padding: 1rem;
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  .modal-title {
+    font-size: 1.15rem;
+  }
+
+  .quick-view-box {
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .quick-view-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .qv-image {
+    max-height: 260px;
+  }
+
+  .qv-specs-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  /* === TOASTS === */
+  .toast-container {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .toast {
+    max-width: 100%;
+    font-size: 0.8125rem;
+    padding: 0.75rem 1rem;
+  }
+
+  /* === SECTION HEADERS === */
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-tag {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+  }
+
+  .section-subtitle {
+    font-size: 0.875rem;
+  }
 }
 
-/* Teléfonos pequeños (< 480px) */
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-
+/* --------- Pantallas intermedias (≤ 640px) --------- */
+@media (max-width: 640px) {
   .benefits-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .benefit-card {
+    padding: 0.85rem;
+    background-color: var(--color-marfil);
+    border-radius: var(--radius-md);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
   }
 
   .hero-actions .btn {
     width: 100%;
+    justify-content: center;
+  }
+
+  .hero-card {
+    max-width: 300px;
+  }
+
+  .hero-floating-badge {
+    font-size: 0.6875rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .editorial-pillars {
+    gap: 0.85rem;
+  }
+
+  .pillar-item h4 {
+    font-size: 0.875rem;
+  }
+
+  .pillar-item p {
+    font-size: 0.75rem;
+  }
+
+  .announcement-bar {
+    font-size: 0.625rem;
+    padding: 0.45rem 0.5rem;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+  }
+
+  .catalog-empty {
+    padding: 3rem 1.5rem;
+  }
+
+  .empty-title {
+    font-size: 1.25rem;
+  }
+
+  .empty-text {
+    font-size: 0.875rem;
+  }
+}
+
+/* --------- Teléfonos pequeños (≤ 480px) --------- */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .card-body {
+    padding: 0.65rem 0.55rem 0.6rem;
+  }
+
+  .card-category {
+    font-size: 0.5625rem;
+  }
+
+  .card-title {
+    font-size: 0.8125rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .card-desc {
+    font-size: 0.6875rem;
+    -webkit-line-clamp: 2;
+    margin-bottom: 0.65rem;
+    min-height: unset;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding-top: 0.6rem;
+  }
+
+  .add-cart-btn {
+    width: 100%;
+    height: 34px;
+    border-radius: var(--radius-sm);
+    gap: 0.4rem;
+  }
+
+  .add-cart-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .card-price {
+    font-size: 0.8125rem;
+  }
+
+  .price-label {
+    font-size: 0.5625rem;
+  }
+
+  .fav-btn {
+    width: 28px;
+    height: 28px;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .fav-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .card-badge {
+    font-size: 0.5625rem;
+    padding: 0.2rem 0.4rem;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .quick-view-btn {
+    font-size: 0.625rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .quick-view-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .hero-section {
+    padding: 2rem 0 2.5rem;
+  }
+
+  .hero-card {
+    max-width: 260px;
+    padding: 0.75rem;
+  }
+
+  .hero-card-title {
+    font-size: 1rem;
+  }
+
+  .hero-card-subtitle {
+    font-size: 0.6875rem;
+  }
+
+  .hero-card-price {
+    font-size: 0.95rem;
+  }
+
+  .hero-img-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .newsletter-box {
+    padding: 1.75rem 1rem;
+  }
+
+  .newsletter-box::before {
+    height: 3px;
+  }
+
+  .editorial-badge {
+    padding: 1rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .editorial-badge-number {
+    font-size: 1.5rem;
+  }
+
+  .editorial-badge-text {
+    font-size: 0.75rem;
+  }
+
+  .editorial-img-box {
+    aspect-ratio: 1 / 1;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .sort-label {
+    font-size: 0.75rem;
+  }
+
+  .sort-select {
+    font-size: 0.8125rem;
+    padding: 0.6rem 1.75rem 0.6rem 0.75rem;
+  }
+
+  .modal-overlay {
+    padding: 0;
+  }
+
+  .modal-box {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    max-height: 92vh;
+  }
+
+  .qv-specs-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    grid-template-columns: 52px 1fr auto;
+    gap: 0.6rem;
+  }
+
+  .cart-item-img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .cart-item-title {
+    font-size: 0.75rem;
+  }
+
+  .cart-item-price {
+    font-size: 0.75rem;
+  }
+
+  .item-total-price {
+    font-size: 0.75rem;
+  }
+
+  .qty-controls {
+    margin-top: 0.3rem;
+  }
+
+  .qty-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+
+  .qty-value {
+    min-width: 20px;
+    font-size: 0.75rem;
+  }
+
+  .drawer-footer {
+    padding: 1rem 0.75rem;
+  }
+
+  .cart-summary-row {
+    font-size: 0.8125rem;
+  }
+
+  .cart-summary-row.total-row {
+    font-size: 0.9375rem;
+  }
+
+  .cart-summary-row.total-row .total-amount {
+    font-size: 1rem;
+  }
+
+  .cart-demo-notice {
+    font-size: 0.6875rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .footer-bio {
+    font-size: 0.8125rem;
+  }
+
+  .footer-heading {
+    font-size: 0.8125rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8125rem;
+  }
+
+  .footer-contact-item {
+    font-size: 0.8125rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.6875rem;
+    padding-top: 1.5rem;
+  }
+}
+
+/* --------- Teléfonos muy pequeños (≤ 380px) --------- */
+@media (max-width: 380px) {
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .brand-logo .logo-main {
+    font-size: 1.25rem;
+    letter-spacing: 0.12em;
+  }
+
+  .brand-logo .logo-sub {
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-desc {
+    font-size: 0.8125rem;
+    -webkit-line-clamp: 3;
+    min-height: unset;
+  }
+
+  .card-footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .add-cart-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .card-price {
+    font-size: 1rem;
+  }
+
+  .hero-card {
+    max-width: 100%;
+  }
+
+  .hero-section {
+    padding: 1.5rem 0 2rem;
+  }
+
+  .hero-card-meta {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .announcement-bar {
+    font-size: 0.5625rem;
+    padding: 0.4rem 0.4rem;
+  }
+
+  .filter-btn {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+  }
+
+  .search-input {
+    font-size: 0.8125rem;
+    padding: 0.6rem 2.25rem;
+  }
+
+  .newsletter-box {
+    padding: 1.5rem 0.75rem;
+    border-radius: var(--radius-md);
+  }
+
+  .newsletter-input {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.875rem;
+  }
+
+  .drawer-header {
+    padding: 1rem 0.75rem;
+  }
+
+  .cart-items-body {
+    padding: 0.75rem;
+    gap: 0.85rem;
+  }
+
+  .toast {
+    font-size: 0.75rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .toast svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
 /* --------------------------------------------------------------------------
-   16. PREFERENCIA DE MOVIMIENTO REDUCIDO (ACCESIBILIDAD)
+   17. ORIENTACIÓN HORIZONTAL EN MÓVILES
+   -------------------------------------------------------------------------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    padding: 1.5rem 0 2rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    gap: 1.5rem;
+  }
+
+  .hero-visual {
+    order: 0;
+  }
+
+  .hero-card {
+    max-width: 280px;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+  }
+
+  .hero-eyebrow {
+    justify-content: flex-start;
+  }
+
+  .modal-overlay {
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .modal-box {
+    border-radius: var(--radius-lg);
+    max-height: 95vh;
+  }
+
+  .main-nav.is-mobile-open {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 0.75rem;
+    max-height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   18. PREFERENCIA DE MOVIMIENTO REDUCIDO (ACCESIBILIDAD)
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -2131,6 +3182,666 @@ ul, ol {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   19. SOPORTE PARA NOTCH / SAFE AREA (iOS / Android)
+   -------------------------------------------------------------------------- */
+@supports (padding: max(0px)) {
+  .site-header .nav-container {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .cart-drawer, .favorites-drawer {
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+
+  .drawer-footer {
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+  }
+
+  .toast-container {
+    bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .site-footer {
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   20. TOUCH IMPROVEMENTS
+   -------------------------------------------------------------------------- */
+@media (hover: none) and (pointer: coarse) {
+  .quick-view-btn {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    position: static;
+    transform: none;
+    width: 100%;
+    border-radius: 0;
+    margin-top: -1px;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    background-color: rgba(32, 35, 31, 0.88);
+  }
+
+  .product-card:hover .quick-view-btn {
+    transform: none;
+  }
+
+  .card-img-container {
+    position: relative;
+  }
+
+  .product-card:hover {
+    transform: none;
+  }
+
+  .product-card:active {
+    transform: scale(0.98);
+  }
+
+  .hero-card:hover {
+    transform: none;
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-gold:hover {
+    transform: none;
+  }
+
+  .add-cart-btn:hover {
+    transform: none;
+  }
+
+  .social-link:hover {
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   21. SECCIONES AEO (FAQ ACCORDION) Y SEO-GEO (BOUTIQUE BOGOTÁ)
+   -------------------------------------------------------------------------- */
+.faq-section {
+  padding: 5rem 0;
+  background-color: var(--color-marfil);
+  border-top: 1px solid var(--color-borde);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.faq-container {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.faq-item:hover {
+  border-color: var(--color-dorado);
+}
+
+.faq-item.is-open {
+  border-color: var(--color-dorado);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-carbon);
+  text-align: left;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.faq-button:hover {
+  color: var(--color-dorado);
+}
+
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-arena-soft);
+  color: var(--color-carbon);
+  transition: transform var(--transition-normal), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.faq-icon svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--transition-normal);
+}
+
+.faq-item.is-open .faq-icon {
+  background-color: var(--color-dorado);
+  color: var(--color-blanco);
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+  padding: 0 1.5rem;
+}
+
+.faq-item.is-open .faq-answer {
+  max-height: 500px;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.faq-answer p {
+  color: var(--color-carbon-light);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.faq-cta-card {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--color-blanco);
+  border: 1px dashed var(--color-dorado);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.faq-cta-text h4 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-carbon);
+  margin-bottom: 0.35rem;
+}
+
+.faq-cta-text p {
+  color: var(--color-carbon-muted);
+  font-size: 0.875rem;
+}
+
+/* === BOUTIQUE / SALA DE VENTAS BOGOTÁ (SEO-GEO) === */
+.boutique-section {
+  padding: 5rem 0;
+  background-color: var(--color-carbon);
+  color: var(--color-blanco);
+  position: relative;
+  overflow: hidden;
+}
+
+.boutique-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185, 139, 85, 0.15) 0%, rgba(32, 35, 31, 0) 70%);
+  pointer-events: none;
+}
+
+.boutique-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.boutique-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.boutique-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-dorado);
+  font-weight: 600;
+}
+
+.boutique-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-blanco);
+  line-height: 1.2;
+}
+
+.boutique-title em {
+  font-style: italic;
+  color: var(--color-dorado);
+}
+
+.boutique-desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.975rem;
+  line-height: 1.7;
+}
+
+.boutique-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(185, 139, 85, 0.3);
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  color: var(--color-arena-soft);
+  width: fit-content;
+}
+
+.pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #3D7C55;
+  box-shadow: 0 0 0 0 rgba(61, 124, 85, 0.7);
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(61, 124, 85, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(61, 124, 85, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(61, 124, 85, 0); }
+}
+
+.boutique-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.boutique-detail-item h5 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-dorado);
+  margin-bottom: 0.4rem;
+}
+
+.boutique-detail-item p,
+.boutique-detail-item a {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.boutique-detail-item a:hover {
+  color: var(--color-dorado);
+  text-decoration: underline;
+}
+
+.boutique-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.boutique-actions .btn {
+  padding: 0.85rem 1.5rem;
+}
+
+.boutique-visual-card {
+  background: linear-gradient(145deg, rgba(46, 51, 44, 0.7), rgba(32, 35, 31, 0.95));
+  border: 1px solid rgba(185, 139, 85, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1rem;
+}
+
+.map-header-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-blanco);
+}
+
+.map-coords {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--color-dorado);
+  background: rgba(185, 139, 85, 0.12);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.map-mockup {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #191B18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.map-grid-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  background-image: 
+    linear-gradient(rgba(185, 139, 85, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(185, 139, 85, 0.3) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.map-marker {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: floatPin 3s ease-in-out infinite;
+}
+
+@keyframes floatPin {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.marker-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-dorado);
+  color: var(--color-carbon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(185, 139, 85, 0.5);
+}
+
+.marker-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.marker-label {
+  background-color: rgba(32, 35, 31, 0.95);
+  border: 1px solid var(--color-dorado);
+  color: var(--color-blanco);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.travel-times {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.travel-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.travel-card .time {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-dorado);
+  display: block;
+}
+
+.travel-card .place {
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.2rem;
+}
+
+.colombia-coverage {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+}
+
+.coverage-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.6rem;
+}
+
+.coverage-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.coverage-pill {
+  font-size: 0.6875rem;
+  padding: 0.25rem 0.55rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 900px) {
+  .boutique-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .faq-button {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  .faq-answer {
+    padding: 0 1rem;
+  }
+  .faq-item.is-open .faq-answer {
+    padding: 0 1rem 1rem 1rem;
+  }
+  .boutique-details-grid {
+    grid-template-columns: 1fr;
+  }
+  .travel-times {
+    grid-template-columns: 1fr;
+  }
+  .faq-cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   22. COMPONENTE COMPARTIR OPEN GRAPH (PRODUCT SHARE)
+   -------------------------------------------------------------------------- */
+.og-share-container {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-borde);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.og-share-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-carbon-muted);
+}
+
+.og-share-badge {
+  font-size: 0.6875rem;
+  color: var(--color-dorado);
+  background: var(--color-dorado-soft);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.og-share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.og-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-blanco);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-carbon);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.og-share-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.og-share-btn:hover {
+  background-color: var(--color-marfil);
+  border-color: var(--color-dorado);
+  color: var(--color-dorado);
+  transform: translateY(-1px);
+}
+
+.og-share-btn.whatsapp:hover {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: #FFFFFF;
+}
+
+.og-share-btn.facebook:hover {
+  background-color: #1877F2;
+  border-color: #1877F2;
+  color: #FFFFFF;
+}
+
+.og-share-btn.twitter:hover {
+  background-color: #000000;
+  border-color: #000000;
+  color: #FFFFFF;
+}
+
+.og-share-btn.copy:hover {
+  background-color: var(--color-carbon);
+  border-color: var(--color-carbon);
+  color: var(--color-blanco);
+}
+
+.card-share-trigger {
+  position: absolute;
+  top: 0.75rem;
+  right: 3.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(226, 223, 216, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  color: var(--color-carbon);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), color var(--transition-fast);
+}
+
+.card-share-trigger svg {
+  width: 15px;
+  height: 15px;
+}
+
+.product-card:hover .card-share-trigger {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card-share-trigger:hover {
+  color: var(--color-dorado);
+  border-color: var(--color-dorado);
+  background: var(--color-blanco);
+}
+
+@media (hover: none) {
+  .card-share-trigger {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -2164,6 +3875,8 @@ ul, ol {
         <a href="#beneficios" class="nav-link">Garantía</a>
         <a href="#nosotros" class="nav-link">Nuestra Esencia</a>
         <a href="#novedades" class="nav-link">Novedades</a>
+        <a href="#faq" class="nav-link">Preguntas</a>
+        <a href="#boutique" class="nav-link">Boutique Bogotá</a>
       </nav>
 
       <!-- Botones de acción del encabezado -->
@@ -2354,6 +4067,7 @@ ul, ol {
                 placeholder="Buscar por nombre, categoría o detalle..." 
                 aria-label="Buscar productos"
                 autocomplete="off"
+                maxlength="60"
               />
               <button type="button" class="clear-search-btn" id="clearSearchBtn" aria-label="Limpiar búsqueda" title="Limpiar búsqueda">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2489,15 +4203,19 @@ ul, ol {
             Recibe en primicia nuestras series numeradas, artículos sobre cultura relojera y ofertas reservadas para miembros.
           </p>
           <form class="newsletter-form" id="newsletterForm" novalidate>
+            <!-- Campo honeypot oculto anti-spam / anti-bot -->
+            <input type="text" name="_hp_security_check" id="newsletterHp" tabindex="-1" autocomplete="off" style="display:none !important; position:absolute; left:-9999px;" aria-hidden="true" />
             <input 
               type="email" 
               class="newsletter-input" 
               id="newsletterEmail" 
               placeholder="Ingresa tu correo electrónico..." 
               required 
+              maxlength="100"
+              autocomplete="email"
               aria-label="Correo electrónico para suscripción"
             />
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary" id="newsletterSubmitBtn">
               Suscribirme
             </button>
           </form>
@@ -2505,6 +4223,317 @@ ul, ol {
             Respetamos tu privacidad. No enviamos spam y puedes darte de baja en cualquier momento.
           </p>
         </div>
+      </div>
+    </section>
+    <!-- ====================================================================
+         7.1 SECCIÓN FAQ (PREGUNTAS FRECUENTES) — AEO ENGINE OPTIMIZATION
+         Schema.org FAQPage con microdata semántica completa para IA y Snippets
+         ==================================================================== -->
+    <section class="faq-section" id="faq" itemscope itemtype="https://schema.org/FAQPage">
+      <div class="container faq-container">
+        
+        <div class="section-header">
+          <span class="section-tag">Respuestas Claras &bull; Asistencia Oficial</span>
+          <h2 class="section-title">Preguntas Frecuentes</h2>
+          <p class="section-subtitle">
+            Todo lo que necesitas saber sobre garantías de 2 años, envíos asegurados en Colombia, materiales y colecciones.
+          </p>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+          
+          <!-- Pregunta 1 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button type="button" class="faq-button" aria-expanded="false" aria-controls="faq-ans-1">
+              <span itemprop="name">¿Qué es RelojNori y dónde queda su tienda?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">
+                RelojNori es una marca colombiana de relojería contemporánea y minimalista fundada en Bogotá. Su sala de ventas principal está ubicada en la <strong>Calle 85 # 11-53, Zona Rosa, Bogotá D.C., Colombia</strong>. Atendemos de lunes a viernes de 10:00 AM a 7:00 PM y sábados de 10:00 AM a 5:00 PM.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button type="button" class="faq-button" aria-expanded="false" aria-controls="faq-ans-2">
+              <span itemprop="name">¿Cuánto cuestan los relojes RelojNori?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">
+                Los relojes RelojNori tienen precios desde <strong>$890.000 COP</strong> hasta <strong>$2.480.000 COP</strong> según el modelo y la colección. Todas las piezas incluyen cristal de zafiro, acero quirúrgico 316L y garantía oficial de 2 años. Los modelos más solicitados son el Bauhaus Mono ($890.000 COP), Stella Minimal Gold ($980.000 COP) y Chrono Diver 300 ($1.450.000 COP).
+              </p>
+            </div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button type="button" class="faq-button" aria-expanded="false" aria-controls="faq-ans-3">
+              <span itemprop="name">¿RelojNori hace envíos a toda Colombia?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">
+                Sí, ofrecemos <strong>envío asegurado y gratuito a toda Colombia</strong>, cubriendo Bogotá, Medellín, Cali, Barranquilla, Bucaramanga, Cartagena, Pereira, Manizales y más de 900 municipios. El tiempo de entrega habitual es de 2 a 5 días hábiles con guía de rastreo y empaque de alta seguridad.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button type="button" class="faq-button" aria-expanded="false" aria-controls="faq-ans-4">
+              <span itemprop="name">¿Qué garantía tienen los relojes RelojNori?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-4" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">
+                Todas nuestras piezas cuentan con <strong>garantía oficial de 2 años (24 meses)</strong> en todo el territorio colombiano. Cubre calibres de movimiento, estanqueidad de fábrica y defectos de manufactura. Incluye certificado numerado de autenticidad y servicio técnico especializado en nuestro taller de Bogotá.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button type="button" class="faq-button" aria-expanded="false" aria-controls="faq-ans-5">
+              <span itemprop="name">¿De qué materiales están hechos los relojes RelojNori?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">
+                Utilizamos <strong>acero inoxidable quirúrgico 316L</strong> (hipoalergénico y resistente a la corrosión salina), <strong>cristal de zafiro sintético con dureza 9 Mohs</strong> (virtualmente irrayable) y correas de cuero curtido vegetal de origen ético o mallas milanesas de acero de alta densidad.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pregunta 6 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button type="button" class="faq-button" aria-expanded="false" aria-controls="faq-ans-6">
+              <span itemprop="name">¿Cuáles son las colecciones de relojes disponibles en RelojNori?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">
+                Contamos con cuatro familias estilísticas: <strong>Clásicos</strong> (Heritage Automatic, Grand Classic Vintage), <strong>Deportivos</strong> (Chrono Diver 300, Aero Racing GMT), <strong>Minimalistas</strong> (Stella Minimal Gold, Bauhaus Mono) y <strong>Elegantes</strong> (Midnight Obsidian, Royale Skeleton Dial).
+              </p>
+            </div>
+          </div>
+
+          <!-- Pregunta 7 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button type="button" class="faq-button" aria-expanded="false" aria-controls="faq-ans-7">
+              <span itemprop="name">¿Los relojes RelojNori son resistentes al agua?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-7" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">
+                Sí. Cada modelo cuenta con grado de hermeticidad específico: desde 3 ATM (30 m, lluvia y salpicaduras) en las líneas minimalistas ultrafinas, hasta 30 ATM (300 m) con corona roscada en nuestro modelo insignia Chrono Diver 300 para inmersión recreativa.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pregunta 8 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button type="button" class="faq-button" aria-expanded="false" aria-controls="faq-ans-8">
+              <span itemprop="name">¿Dónde puedo comprar un reloj RelojNori en Bogotá?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-8" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">
+                Puedes visitarnos en nuestra <strong>Boutique & Sala de Ventas en la Zona Rosa de Bogotá: Calle 85 # 11-53</strong>, o adquirir tu pieza en línea con envío directo a tu domicilio en toda Colombia a través de www.relojnori.com. Contáctanos al teléfono <strong>+57 (601) 390 4488</strong>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="faq-cta-card">
+          <div class="faq-cta-text">
+            <h4>¿Tienes una consulta específica sobre alguna pieza?</h4>
+            <p>Nuestros maestros relojeros y asesores están disponibles para resolver cualquier inquietud técnica o personalizada.</p>
+          </div>
+          <a href="https://wa.me/576013904488?text=Hola%20RelojNori,%20quisiera%20asesor%C3%ADa%20sobre%20una%20pieza" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Asesoría WhatsApp Oficial
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7.2 SECCIÓN BOUTIQUE FLAGSHIP BOGOTÁ — SEO-GEO LOCAL BUSINESS
+         Schema.org JewelryStore / LocalBusiness microdata para búsquedas locales
+         ==================================================================== -->
+    <section class="boutique-section" id="boutique" itemscope itemtype="https://schema.org/JewelryStore">
+      <div class="container">
+        
+        <div class="boutique-grid">
+          
+          <!-- Información y NAP -->
+          <div class="boutique-info-box">
+            <div class="boutique-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Sala de Ventas Bogotá &bull; Colombia</span>
+            </div>
+
+            <h2 class="boutique-title">
+              Una experiencia palpable en el <em>corazón</em> de Bogotá.
+            </h2>
+
+            <p class="boutique-desc" itemprop="description">
+              Ubicada en la exclusiva Zona Rosa de Bogotá, nuestra boutique insignia te invita a descubrir de primera mano el peso del acero 316L, la pureza del cristal de zafiro y el movimiento de calibres mecánicos con asesoría horológica individualizada.
+            </p>
+
+            <div class="boutique-status-pill" id="boutiqueStatusPill">
+              <span class="pulse-dot"></span>
+              <span id="boutiqueStatusText">Abierto hoy: 10:00 AM — 7:00 PM</span>
+            </div>
+
+            <div class="boutique-details-grid">
+              <div class="boutique-detail-item" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <h5>Dirección Física</h5>
+                <p>
+                  <span itemprop="streetAddress">Calle 85 # 11-53</span><br>
+                  <span itemprop="addressLocality">Zona Rosa, Bogotá D.C.</span>, <span itemprop="addressCountry">Colombia</span><br>
+                  <small style="opacity: 0.7;">Código Postal: 110221</small>
+                </p>
+              </div>
+
+              <div class="boutique-detail-item">
+                <h5>Horario de Atención</h5>
+                <p>
+                  <strong>Lun — Vie:</strong> 10:00 AM — 7:00 PM<br>
+                  <strong>Sábados:</strong> 10:00 AM — 5:00 PM<br>
+                  <span style="opacity: 0.7;">Domingos: Citas Privadas</span>
+                </p>
+              </div>
+
+              <div class="boutique-detail-item">
+                <h5>Línea Directa & Ventas</h5>
+                <p>
+                  <a href="tel:+576013904488" itemprop="telephone">+57 (601) 390 4488</a><br>
+                  <a href="mailto:soporte@relojnori.com" itemprop="email">soporte@relojnori.com</a>
+                </p>
+              </div>
+
+              <div class="boutique-detail-item">
+                <h5>Medios de Pago Aceptados</h5>
+                <p style="font-size: 0.8125rem;">
+                  Efectivo, Visa, Mastercard, AMEX, PSE, Nequi, Daviplata y transferencia directa Bancolombia.
+                </p>
+              </div>
+            </div>
+
+            <div class="boutique-actions">
+              <a href="https://www.google.com/maps/search/?api=1&query=4.6688,-74.0565" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                </svg>
+                Cómo Llegar (Google Maps)
+              </a>
+              <a href="tel:+576013904488" class="btn btn-secondary">
+                Llamar a Sala
+              </a>
+            </div>
+          </div>
+
+          <!-- Visualización geográfica y tiempos -->
+          <div class="boutique-visual-card">
+            
+            <div class="map-header">
+              <span class="map-header-title">Geolocalización Zona Rosa</span>
+              <span class="map-coords" itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+                <meta itemprop="latitude" content="4.6688" />
+                <meta itemprop="longitude" content="-74.0565" />
+                4.6688° N, 74.0565° W
+              </span>
+            </div>
+
+            <div class="map-mockup" role="img" aria-label="Plano de ubicación RelojNori Calle 85 Zona Rosa Bogotá">
+              <div class="map-grid-bg"></div>
+              <div class="map-marker">
+                <div class="marker-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="7"/>
+                    <polyline points="12 9 12 12 14 14"/>
+                  </svg>
+                </div>
+                <div class="marker-label">RelojNori Flagship &bull; Calle 85</div>
+              </div>
+            </div>
+
+            <div class="travel-times">
+              <div class="travel-card">
+                <span class="time">5 min</span>
+                <span class="place">Parque de la 93</span>
+              </div>
+              <div class="travel-card">
+                <span class="time">7 min</span>
+                <span class="place">Calle 72 / Financiero</span>
+              </div>
+              <div class="travel-card">
+                <span class="time">35 min</span>
+                <span class="place">Aeropuerto El Dorado</span>
+              </div>
+            </div>
+
+            <div class="colombia-coverage">
+              <div class="coverage-title">Envíos asegurados a todo el territorio colombiano:</div>
+              <div class="coverage-pills">
+                <span class="coverage-pill">Bogotá (Entrega Express)</span>
+                <span class="coverage-pill">Medellín</span>
+                <span class="coverage-pill">Cali</span>
+                <span class="coverage-pill">Barranquilla</span>
+                <span class="coverage-pill">Cartagena</span>
+                <span class="coverage-pill">Bucaramanga</span>
+                <span class="coverage-pill">Eje Cafetero</span>
+                <span class="coverage-pill">+900 Municipios</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
     </section>
   </main>
@@ -2566,10 +4595,10 @@ ul, ol {
           <h4 class="footer-heading">Servicio al Cliente</h4>
           <ul class="footer-links">
             <li><a href="#beneficios">Garantía de 2 Años</a></li>
-            <li><a href="#beneficios">Guía de Cuidados</a></li>
-            <li><a href="#beneficios">Envíos y Entregas</a></li>
+            <li><a href="#faq">Preguntas Frecuentes</a></li>
+            <li><a href="#boutique">Boutique en Bogotá</a></li>
+            <li><a href="#beneficios">Envíos Asegurados Colombia</a></li>
             <li><a href="#nosotros">Nuestra Filosofía</a></li>
-            <li><a href="#inicio">Términos del Servicio</a></li>
           </ul>
         </div>
 
@@ -2602,7 +4631,15 @@ ul, ol {
 
       <div class="footer-bottom">
         <p>&copy; 2026 RelojNori Horlogerie. Todos los derechos reservados. Prototipo de comercio electrónico frontend.</p>
-        <span class="footer-bottom-badge">Hecho con HTML5, CSS3 y Vanilla JavaScript</span>
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+          <span class="footer-bottom-badge">Hecho con HTML5, CSS3 y Vanilla JavaScript</span>
+          <a href="test_suite.html" class="footer-bottom-badge" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:var(--color-primary); border:1px solid rgba(212,175,55,0.3); transition:background 0.2s;" title="Abrir consola de pruebas unitarias y funcionales">
+            🧪 Suite de Pruebas QA
+          </a>
+          <button type="button" onclick="window.RELOJNORI.runTests();" class="footer-bottom-badge" style="background:transparent; border:1px solid rgba(212,175,55,0.3); color:var(--color-primary); cursor:pointer; font-size:11px;" title="Ejecutar pruebas automáticas en vivo (Ctrl+Shift+T)">
+            ▶ Test en Vivo
+          </button>
+        </div>
       </div>
 
     </div>
@@ -2763,7 +4800,7 @@ ul, ol {
   // --------------------------------------------------------------------------
   // 1. DATOS DE DEMOSTRACIÓN (8 PRODUCTOS DE EJEMPLO RELOJNORI)
   // --------------------------------------------------------------------------
-  const PRODUCTS = [
+  let PRODUCTS = [
     {
       id: 1,
       name: "RelojNori Chrono Diver 300",
@@ -2983,54 +5020,359 @@ ul, ol {
     // Toasts
     toastContainer: document.getElementById('toastContainer'),
 
-    // Newsletter
+    // Newsletter y Seguridad
     newsletterForm: document.getElementById('newsletterForm'),
-    newsletterEmail: document.getElementById('newsletterEmail')
+    newsletterEmail: document.getElementById('newsletterEmail'),
+    newsletterHp: document.getElementById('newsletterHp'),
+    newsletterSubmitBtn: document.getElementById('newsletterSubmitBtn')
   };
 
+  // ==========================================================================
+  // 3.0 SISTEMA DE SEGURIDAD MULTINIVEL (ANTI-XSS, SANITIZACIÓN, ANTI-TAMPERING)
+  // ==========================================================================
+  const Security = {
+    /**
+     * Escapa caracteres especiales HTML para neutralizar inyecciones XSS
+     */
+    escapeHTML(str) {
+      if (typeof str !== 'string') return String(str || '');
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/\//g, '&#x2F;');
+    },
+
+    /**
+     * Valida y normaliza direcciones de correo contra ReDoS e inyección de encabezados
+     */
+    isValidEmail(email) {
+      if (!email || typeof email !== 'string') return false;
+      const clean = email.trim();
+      if (clean.length < 5 || clean.length > 100) return false;
+      const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+      return regex.test(clean);
+    },
+
+    /**
+     * Sanitiza y valida la integridad de los datos del carrito provenientes de localStorage o APIs
+     */
+    sanitizeCart(raw) {
+      if (!Array.isArray(raw)) return [];
+      const safe = [];
+      const seen = new Set();
+      for (const item of raw) {
+        if (!item || typeof item !== 'object') continue;
+        const id = parseInt(item.id, 10);
+        let qty = parseInt(item.quantity, 10);
+        if (Number.isInteger(id) && PRODUCTS.some(p => p.id === id) && !seen.has(id)) {
+          seen.add(id);
+          if (!Number.isInteger(qty) || qty < 1) qty = 1;
+          if (qty > 50) qty = 50;
+          safe.push({ id, quantity: qty });
+        }
+      }
+      return safe;
+    },
+
+    /**
+     * Sanitiza la lista de favoritos asegurando IDs válidos del catálogo
+     */
+    sanitizeFavorites(raw) {
+      if (!Array.isArray(raw)) return [];
+      return raw
+        .map(id => parseInt(id, 10))
+        .filter((id, idx, arr) => Number.isInteger(id) && PRODUCTS.some(p => p.id === id) && arr.indexOf(id) === idx);
+    },
+
+    /**
+     * Limitador de frecuencia (Rate Limiter) contra envíos automatizados o ataques de denegación
+     */
+    rateLimitMap: new Map(),
+    isRateLimited(key, limitMs = 2500) {
+      const now = Date.now();
+      const last = this.rateLimitMap.get(key) || 0;
+      if (now - last < limitMs) return true;
+      this.rateLimitMap.set(key, now);
+      return false;
+    },
+
+    /**
+     * Congela los objetos del catálogo en memoria (Anti-Tampering)
+     */
+    freezeCatalog(items) {
+      if (!Array.isArray(items)) return;
+      items.forEach(item => {
+        if (item && typeof item === 'object') {
+          if (item.specs) Object.freeze(item.specs);
+          Object.freeze(item);
+        }
+      });
+    },
+
+    /**
+     * Protección contra Clickjacking en navegadores (Frame-Busting)
+     */
+    enforceFrameBusting() {
+      try {
+        if (window.top !== window.self) {
+          window.top.location = window.self.location;
+        }
+      } catch (e) {
+        document.documentElement.style.display = 'none';
+      }
+    }
+  };
+
+  // Aplicar protección anti-clickjacking inmediata
+  Security.enforceFrameBusting();
+
+  // ==========================================================================
+  // 3.1 SISTEMA OPEN GRAPH DINÁMICO (PRODUCTOS ACTUALES Y FUTUROS)
+  // ==========================================================================
+  const OpenGraphManager = {
+    // Valores predeterminados del sitio
+    defaultTags: {
+      title: "RelojNori — Relojes con Carácter | Tienda Oficial Colombia",
+      description: "Descubre nuestra colección de relojes minimalistas, clásicos, deportivos y elegantes. Envío asegurado a toda Colombia y garantía oficial de 2 años. Visítanos en la Zona Rosa de Bogotá.",
+      url: "https://www.relojnori.com/",
+      image: "https://www.relojnori.com/assets/og-relojnori-share.jpg",
+      type: "website"
+    },
+
+    setMeta(property, content, isName = false) {
+      const attr = isName ? 'name' : 'property';
+      let el = document.querySelector(`meta[${attr}="${property}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, property);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    },
+
+    /**
+     * Aplica etiquetas Open Graph y Twitter Cards específicas para cualquier
+     * producto (los 8 existentes o cualquier producto futuro añadido)
+     */
+    setProduct(product) {
+      if (!product) return;
+      const formattedPrice = currencyFormatter.format(product.price);
+      const productUrl = `${window.location.origin}${window.location.pathname}#producto-${product.id}`;
+      const ogTitle = `${product.name} — RelojNori Horlogerie Colombia`;
+      const ogDesc = `${product.description} Precio: ${formattedPrice}. Cristal de zafiro, acero 316L y garantía oficial de 2 años en Colombia.`;
+
+      // 1. Open Graph Estándar
+      this.setMeta('og:type', 'product');
+      this.setMeta('og:title', ogTitle);
+      this.setMeta('og:description', ogDesc);
+      this.setMeta('og:url', productUrl);
+      this.setMeta('og:image', product.image);
+      this.setMeta('og:image:secure_url', product.image);
+      this.setMeta('og:image:alt', `${product.name} en Bogotá Colombia`);
+
+      // 2. Open Graph E-Commerce / Namespace de Productos
+      this.setMeta('product:price:amount', String(product.price));
+      this.setMeta('product:price:currency', 'COP');
+      this.setMeta('product:brand', 'RelojNori');
+      this.setMeta('product:availability', 'in stock');
+      this.setMeta('product:condition', 'new');
+      this.setMeta('product:retailer_item_id', `RN-${product.id}`);
+      this.setMeta('product:category', product.category);
+
+      // 3. Twitter Cards
+      this.setMeta('twitter:title', ogTitle, true);
+      this.setMeta('twitter:description', ogDesc, true);
+      this.setMeta('twitter:image', product.image, true);
+      this.setMeta('twitter:image:alt', product.name, true);
+      this.setMeta('twitter:label1', 'Precio', true);
+      this.setMeta('twitter:data1', formattedPrice, true);
+      this.setMeta('twitter:label2', 'Colección', true);
+      this.setMeta('twitter:data2', product.category, true);
+
+      // 4. Canonical & Title
+      document.title = `${product.name} | RelojNori Horlogerie Colombia`;
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute('href', productUrl);
+    },
+
+    /**
+     * Restaura las etiquetas Open Graph del sitio general
+     */
+    reset() {
+      this.setMeta('og:type', this.defaultTags.type);
+      this.setMeta('og:title', this.defaultTags.title);
+      this.setMeta('og:description', this.defaultTags.description);
+      this.setMeta('og:url', this.defaultTags.url);
+      this.setMeta('og:image', this.defaultTags.image);
+      this.setMeta('og:image:secure_url', this.defaultTags.image);
+      this.setMeta('og:image:alt', 'Colección de relojes RelojNori 2026');
+
+      this.setMeta('twitter:title', this.defaultTags.title, true);
+      this.setMeta('twitter:description', this.defaultTags.description, true);
+      this.setMeta('twitter:image', this.defaultTags.image, true);
+      this.setMeta('twitter:label1', 'Precio', true);
+      this.setMeta('twitter:data1', 'Desde $890.000 COP', true);
+      this.setMeta('twitter:label2', 'Garantía Oficial', true);
+      this.setMeta('twitter:data2', '2 Años - Cobertura Colombia', true);
+
+      document.title = 'RelojNori — Relojes con Carácter | Tienda Oficial en Bogotá, Colombia';
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute('href', this.defaultTags.url);
+    },
+
+    /**
+     * Comparte el producto en diferentes plataformas sociales
+     * generando la vista previa de Open Graph
+     */
+    share(productId, platform = 'native') {
+      const id = parseInt(productId, 10);
+      const product = PRODUCTS.find(p => p.id === id);
+      if (!product) return;
+
+      const formattedPrice = currencyFormatter.format(product.price);
+      const url = `${window.location.origin}${window.location.pathname}#producto-${product.id}`;
+      const text = `Descubre el ${product.name} (${formattedPrice}) en RelojNori Colombia. Relojería contemporánea con cristal de zafiro y garantía de 2 años.`;
+
+      switch (platform) {
+        case 'whatsapp': {
+          const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(`${text}\n${url}`)}`;
+          window.open(waUrl, '_blank', 'noopener,noreferrer');
+          showToast('Abriendo WhatsApp para compartir...');
+          break;
+        }
+        case 'facebook': {
+          const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+          window.open(fbUrl, '_blank', 'noopener,noreferrer,width=600,height=500');
+          break;
+        }
+        case 'twitter': {
+          const twUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+          window.open(twUrl, '_blank', 'noopener,noreferrer,width=600,height=500');
+          break;
+        }
+        case 'copy': {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(() => {
+              showToast('¡Enlace con vista previa Open Graph copiado!');
+            }).catch(() => {
+              showToast('Enlace generado: ' + url);
+            });
+          } else {
+            showToast('Enlace generado: ' + url);
+          }
+          break;
+        }
+        case 'native':
+        default: {
+          if (navigator.share) {
+            navigator.share({
+              title: `${product.name} — RelojNori`,
+              text: text,
+              url: url
+            }).catch(() => {});
+          } else {
+            this.share(productId, 'copy');
+          }
+          break;
+        }
+      }
+    }
+  };
+
+  /**
+   * Permite registrar cualquier producto futuro en el catálogo
+   * Dotándolo de forma automática de soporte Open Graph, Schema.org,
+   * vista rápida, cálculo de cuotas y compartición social.
+   */
+  function addProduct(newProduct) {
+    if (!newProduct || !newProduct.name || !newProduct.price) {
+      console.warn("RelojNori: El producto debe incluir al menos 'name' y 'price'.");
+      return null;
+    }
+    const nextId = PRODUCTS.reduce((max, p) => p.id > max ? p.id : max, 0) + 1;
+    const safePrice = Math.max(0, parseInt(newProduct.price, 10) || 0);
+    const product = {
+      id: newProduct.id || nextId,
+      name: Security.escapeHTML(newProduct.name),
+      category: Security.escapeHTML(newProduct.category || "Colección"),
+      price: safePrice,
+      tag: Security.escapeHTML(newProduct.tag || "Nuevo"),
+      tagClass: Security.escapeHTML(newProduct.tagClass || ""),
+      description: Security.escapeHTML(newProduct.description || "Pieza de relojería contemporánea RelojNori."),
+      image: newProduct.image || "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+      specs: Object.assign({
+        diameter: "40 mm",
+        case: "Acero Quirúrgico 316L",
+        waterResistance: "5 ATM / 50 m",
+        crystal: "Cristal de Zafiro",
+        movement: "Calibre de Precisión",
+        strap: "Piel genuina curtida"
+      }, newProduct.specs || {})
+    };
+
+    if (product.specs) Object.freeze(product.specs);
+    Object.freeze(product);
+
+    PRODUCTS.push(product);
+    renderProducts();
+    showToast(`Pieza "${product.name}" integrada con Open Graph.`);
+    return product;
+  }
+
   // --------------------------------------------------------------------------
-  // 4. PERSISTENCIA EN LOCALSTORAGE (RelojNori)
+  // 4. PERSISTENCIA EN LOCALSTORAGE CON VALIDACIÓN DE INTEGRIDAD
   // --------------------------------------------------------------------------
   function initLocalStorage() {
     try {
       const storedCart = localStorage.getItem('relojnori_cart') || localStorage.getItem('nordi_cart');
       if (storedCart) {
-        cart = JSON.parse(storedCart);
+        const parsed = JSON.parse(storedCart);
+        cart = Security.sanitizeCart(parsed);
+      } else {
+        cart = [];
       }
     } catch (e) {
-      console.warn('No se pudo acceder al carrito en localStorage:', e);
+      console.warn('Protección activa: datos de carrito restablecidos por seguridad:', e);
       cart = [];
     }
 
     try {
       const storedFavs = localStorage.getItem('relojnori_favorites') || localStorage.getItem('nordi_favorites');
       if (storedFavs) {
-        favorites = JSON.parse(storedFavs);
+        const parsed = JSON.parse(storedFavs);
+        favorites = Security.sanitizeFavorites(parsed);
+      } else {
+        favorites = [];
       }
     } catch (e) {
-      console.warn('No se pudieron acceder a favoritos en localStorage:', e);
+      console.warn('Protección activa: datos de favoritos restablecidos por seguridad:', e);
       favorites = [];
     }
   }
 
   /**
-   * Guarda el estado del carrito en localStorage y vuelve a renderizarlo
+   * Guarda el estado del carrito en localStorage previa sanitización
    * (Cumple con la especificación técnica: saveCart())
    */
   function saveCart() {
     try {
-      localStorage.setItem('relojnori_cart', JSON.stringify(cart));
+      const safeCart = Security.sanitizeCart(cart);
+      localStorage.setItem('relojnori_cart', JSON.stringify(safeCart));
     } catch (e) {
-      console.warn('Error al guardar carrito en localStorage:', e);
+      console.warn('Error al guardar carrito en almacenamiento local:', e);
     }
     renderCart();
   }
 
   function saveFavorites() {
     try {
-      localStorage.setItem('relojnori_favorites', JSON.stringify(favorites));
+      const safeFavs = Security.sanitizeFavorites(favorites);
+      localStorage.setItem('relojnori_favorites', JSON.stringify(safeFavs));
     } catch (e) {
-      console.warn('Error al guardar favoritos en localStorage:', e);
+      console.warn('Error al guardar favoritos en almacenamiento local:', e);
     }
     updateFavoritesBadges();
     renderFavorites();
@@ -3099,10 +5441,36 @@ ul, ol {
     const cardsHTML = filtered.map(product => {
       const isFav = favorites.includes(product.id);
       return `
-        <article class="product-card" data-id="${product.id}">
+        <article 
+          class="product-card" 
+          data-id="${product.id}"
+          data-og-title="${product.name}"
+          data-og-price="${product.price}"
+          data-og-image="${product.image}"
+          data-og-category="${product.category}"
+          itemscope 
+          itemtype="https://schema.org/Product"
+        >
           <div class="card-img-container">
             ${product.tag ? `<span class="card-badge ${product.tagClass}">${product.tag}</span>` : ''}
             
+            <button 
+              type="button" 
+              class="card-share-trigger" 
+              data-action="share-product" 
+              data-id="${product.id}" 
+              aria-label="Compartir ${product.name} con Open Graph" 
+              title="Compartir reloj"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3"/>
+                <circle cx="6" cy="12" r="3"/>
+                <circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/>
+                <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>
+              </svg>
+            </button>
+
             <button 
               type="button" 
               class="fav-btn ${isFav ? 'is-favorite' : ''}" 
@@ -3180,36 +5548,46 @@ ul, ol {
    */
   function addToCart(productId, qtyToAdd = 1) {
     const id = parseInt(productId, 10);
+    if (!Number.isInteger(id)) return;
     const product = PRODUCTS.find(p => p.id === id);
     if (!product) return;
 
+    let qty = parseInt(qtyToAdd, 10);
+    if (!Number.isInteger(qty) || qty < 1) qty = 1;
+    if (qty > 10) qty = 10; // Límite seguro por adición unitaria
+
     const existingIndex = cart.findIndex(item => item.id === id);
     if (existingIndex > -1) {
-      cart[existingIndex].quantity += qtyToAdd;
+      cart[existingIndex].quantity = Math.min(50, cart[existingIndex].quantity + qty);
     } else {
       cart.push({
         id: id,
-        quantity: qtyToAdd
+        quantity: qty
       });
     }
 
     saveCart();
     animateCounterBadge(DOM.cartCountBadge);
-    showToast(`"${product.name}" añadido al carrito`);
+    showToast(`"${Security.escapeHTML(product.name)}" añadido al carrito`);
   }
 
   /**
-   * Modifica la cantidad de un producto en el carrito
+   * Modifica la cantidad de un producto en el carrito con límites de seguridad
    */
   function updateCartQuantity(productId, delta) {
     const id = parseInt(productId, 10);
+    const d = parseInt(delta, 10);
+    if (!Number.isInteger(id) || !Number.isInteger(d)) return;
     const existingIndex = cart.findIndex(item => item.id === id);
     if (existingIndex === -1) return;
 
-    cart[existingIndex].quantity += delta;
+    cart[existingIndex].quantity += d;
     if (cart[existingIndex].quantity <= 0) {
       removeFromCart(id);
       return;
+    }
+    if (cart[existingIndex].quantity > 50) {
+      cart[existingIndex].quantity = 50;
     }
 
     saveCart();
@@ -3442,6 +5820,12 @@ ul, ol {
     const product = PRODUCTS.find(p => p.id === id);
     if (!product || !DOM.quickViewBody || !DOM.quickViewModal) return;
 
+    // Actualizar dinámicamente las etiquetas Open Graph y Twitter Cards para este producto
+    OpenGraphManager.setProduct(product);
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', `#producto-${product.id}`);
+    }
+
     const isFav = favorites.includes(product.id);
 
     DOM.quickViewBody.innerHTML = `
@@ -3515,6 +5899,42 @@ ul, ol {
               </svg>
             </button>
           </div>
+
+          <!-- Componente Compartir con Open Graph Preview -->
+          <div class="og-share-container">
+            <div class="og-share-label">
+              <span>Compartir con Open Graph</span>
+              <span class="og-share-badge">Vista previa</span>
+            </div>
+            <div class="og-share-buttons">
+              <button type="button" class="og-share-btn whatsapp" data-share="whatsapp" data-id="${product.id}" title="Compartir en WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                WhatsApp
+              </button>
+              <button type="button" class="og-share-btn facebook" data-share="facebook" data-id="${product.id}" title="Compartir en Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+                Facebook
+              </button>
+              <button type="button" class="og-share-btn twitter" data-share="twitter" data-id="${product.id}" title="Compartir en X / Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4l11.733 16h4.267l-11.733 -16z"/>
+                  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/>
+                </svg>
+                X
+              </button>
+              <button type="button" class="og-share-btn copy" data-share="copy" data-id="${product.id}" title="Copiar enlace con vista previa Open Graph">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                </svg>
+                Copiar Enlace
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     `;
@@ -3526,6 +5946,11 @@ ul, ol {
   function closeQuickView() {
     if (DOM.quickViewModal) DOM.quickViewModal.classList.remove('is-open');
     document.body.style.overflow = '';
+    // Restaurar URL y etiquetas Open Graph generales
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+    OpenGraphManager.reset();
   }
 
   // --------------------------------------------------------------------------
@@ -3537,8 +5962,13 @@ ul, ol {
    */
   function showModal(title, text) {
     if (!DOM.modalOverlay || !DOM.modalTitle || !DOM.modalBody) return;
-    DOM.modalTitle.textContent = title;
-    DOM.modalBody.innerHTML = typeof text === 'string' ? `<p>${text}</p>` : text;
+    DOM.modalTitle.textContent = Security.escapeHTML(title);
+    if (typeof text === 'string') {
+      DOM.modalBody.innerHTML = text;
+    } else {
+      DOM.modalBody.textContent = '';
+      DOM.modalBody.appendChild(text);
+    }
     DOM.modalOverlay.classList.add('is-open');
     document.body.style.overflow = 'hidden';
   }
@@ -3552,7 +5982,7 @@ ul, ol {
   // 10. NOTIFICACIONES FLOTANTES (showToast(message))
   // --------------------------------------------------------------------------
   /**
-   * Muestra mensajes breves de confirmación
+   * Muestra mensajes breves de confirmación protegidos contra inyecciones
    * (Cumple con la especificación técnica: showToast(message))
    */
   function showToast(message) {
@@ -3561,11 +5991,12 @@ ul, ol {
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.setAttribute('role', 'status');
+    const safeText = Security.escapeHTML(message);
     toast.innerHTML = `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M20 6 9 17l-5-5"/>
       </svg>
-      <span>${message}</span>
+      <span>${safeText}</span>
     `;
 
     DOM.toastContainer.appendChild(toast);
@@ -3602,6 +6033,20 @@ ul, ol {
           toggleFavorite(productId);
         } else if (action === 'quick-view') {
           openQuickView(productId);
+        } else if (action === 'share-product') {
+          OpenGraphManager.share(productId, 'native');
+        }
+      });
+    }
+
+    // Delegación de clics para compartir con Open Graph en el modal
+    if (DOM.quickViewModal) {
+      DOM.quickViewModal.addEventListener('click', (e) => {
+        const shareBtn = e.target.closest('[data-share]');
+        if (shareBtn) {
+          const platform = shareBtn.dataset.share;
+          const productId = shareBtn.dataset.id;
+          OpenGraphManager.share(productId, platform);
         }
       });
     }
@@ -3751,9 +6196,11 @@ ul, ol {
       });
     }
 
-    // 11. Proceder al pago (Checkout demostrativo)
+    // 11. Proceder al pago (Checkout demostrativo con protección anti-doble clic)
     if (DOM.checkoutBtn) {
       DOM.checkoutBtn.addEventListener('click', () => {
+        if (cart.length === 0) return;
+        if (Security.isRateLimited('checkout_click', 1500)) return;
         closeCart();
         const subtotal = cart.reduce((acc, item) => {
           const p = PRODUCTS.find(prod => prod.id === item.id);
@@ -3761,34 +6208,55 @@ ul, ol {
         }, 0);
 
         showModal(
-          "Proceso de compra demostrativo",
+          "Proceso de compra protegido",
           `
             <p style="margin-bottom: 1rem;">
               Has iniciado el proceso de compra para un total de <strong>${currencyFormatter.format(subtotal)} COP</strong>.
             </p>
             <div style="background-color: var(--color-arena-soft); border-left: 4px solid var(--color-dorado); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.875rem;">
-              <strong>Aviso de prototipo:</strong> De acuerdo con la especificación técnica de RelojNori, este proyecto es un frontend interactivo de demostración. No se procesan transacciones reales ni se recopilan datos bancarios.
+              <strong>Aviso de seguridad y prototipo:</strong> De acuerdo con la especificación técnica de RelojNori, este proyecto es un frontend interactivo de demostración. No se procesan transacciones reales ni se recopilan datos bancarios.
             </div>
             <p style="font-size: 0.875rem;">
-              En una siguiente fase de integración, este botón conectará de forma segura con la pasarela de pagos oficial (como Wompi, PayU o Stripe) y un sistema backend para procesar el pedido.
+              En una siguiente fase de integración, este botón conectará mediante tokenización cifrada con la pasarela de pagos oficial (como Wompi, PayU o Stripe) y un sistema backend para procesar el pedido.
             </p>
           `
         );
       });
     }
 
-    // 12. Formulario de Newsletter (Novedades)
+    // 12. Formulario de Newsletter (Novedades con protección Honeypot y Anti-XSS)
     if (DOM.newsletterForm) {
       DOM.newsletterForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const email = DOM.newsletterEmail.value.trim();
+
+        // 1. Detección de bots por Honeypot
+        if (DOM.newsletterHp && DOM.newsletterHp.value.trim() !== '') {
+          console.warn('Bot descartado silenciosamente por trampa honeypot.');
+          return;
+        }
+
+        const email = DOM.newsletterEmail ? DOM.newsletterEmail.value.trim() : '';
         if (!email) return;
 
-        DOM.newsletterEmail.value = '';
+        // 2. Control de frecuencia (Anti-Spam / Rate Limiting)
+        if (Security.isRateLimited('newsletter_submit', 3000)) {
+          showToast("Espera un momento antes de enviar otra solicitud.");
+          return;
+        }
+
+        // 3. Validación de formato seguro
+        if (!Security.isValidEmail(email)) {
+          showToast("Ingresa un correo electrónico con formato válido.");
+          if (DOM.newsletterEmail) DOM.newsletterEmail.focus();
+          return;
+        }
+
+        if (DOM.newsletterEmail) DOM.newsletterEmail.value = '';
+        const safeEmail = Security.escapeHTML(email);
         showToast("¡Gracias por suscribirte al Círculo RelojNori!");
         showModal(
           "Suscripción confirmada",
-          `¡Bienvenido a la comunidad RelojNori! El correo <strong>${email}</strong> ha sido registrado satisfactoriamente para recibir avances de nuevas colecciones e invitaciones exclusivas.`
+          `<p>¡Bienvenido a la comunidad RelojNori! El correo <strong>${safeEmail}</strong> ha sido registrado satisfactoriamente para recibir avances de nuevas colecciones e invitaciones exclusivas.</p>`
         );
       });
     }
@@ -3826,17 +6294,207 @@ ul, ol {
         header.classList.remove('is-scrolled');
       }
     });
+
+    // 16. Acordeón de Preguntas Frecuentes (AEO)
+    const faqButtons = document.querySelectorAll('.faq-button');
+    faqButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        if (!item) return;
+        const isOpen = item.classList.contains('is-open');
+
+        // Cerrar los demás acordeones para mantener orden y legibilidad
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('is-open');
+            const otherBtn = otherItem.querySelector('.faq-button');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Alternar estado actual
+        if (isOpen) {
+          item.classList.remove('is-open');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('is-open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // 17. Horario en tiempo real de Boutique Bogotá (SEO-GEO)
+    updateBoutiqueStatus();
+
+    // 18. Atajo de teclado para ejecutar auditoría de pruebas en vivo (Ctrl + Shift + T)
+    window.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.shiftKey && (e.key === 'T' || e.key === 't')) {
+        e.preventDefault();
+        runTests();
+      }
+    });
+  }
+
+  /**
+   * Calcula el estado de apertura en tiempo real de la sala de ventas
+   * según la hora oficial de Colombia (UTC-5)
+   */
+  function updateBoutiqueStatus() {
+    const statusText = document.getElementById('boutiqueStatusText');
+    const pulseDot = document.querySelector('.pulse-dot');
+    if (!statusText) return;
+
+    try {
+      const now = new Date();
+      // Calcular hora local en Colombia (UTC-5)
+      let utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      let colombiaDate = new Date(utc - (3600000 * 5));
+      let hour = colombiaDate.getHours();
+      let day = colombiaDate.getDay(); // 0: Domingo, 1: Lunes, ..., 6: Sábado
+
+      let isOpen = false;
+      let closing = '';
+
+      if (day >= 1 && day <= 5) {
+        if (hour >= 10 && hour < 19) {
+          isOpen = true;
+          closing = '7:00 PM';
+        }
+      } else if (day === 6) {
+        if (hour >= 10 && hour < 17) {
+          isOpen = true;
+          closing = '5:00 PM';
+        }
+      }
+
+      if (isOpen) {
+        statusText.textContent = `Abierto ahora en Zona Rosa • Cierra a las ${closing}`;
+        if (pulseDot) {
+          pulseDot.style.backgroundColor = '#3D7C55';
+          pulseDot.style.animation = 'pulseGreen 2s infinite';
+        }
+      } else {
+        const next = (day === 0) ? 'Lunes a las 10:00 AM' : 'Mañana a las 10:00 AM';
+        statusText.textContent = `Sala de ventas cerrada ahora • Abre ${next}`;
+        if (pulseDot) {
+          pulseDot.style.backgroundColor = '#B98B55';
+          pulseDot.style.animation = 'none';
+        }
+      }
+    } catch (err) {
+      statusText.textContent = 'Abierto hoy: 10:00 AM — 7:00 PM (Zona Rosa)';
+    }
   }
 
   // --------------------------------------------------------------------------
-  // 12. INICIALIZACIÓN DE LA APLICACIÓN
+  // 12. SUITE DE PRUEBAS AUTOMATIZADAS EN VIVO (QA LIVE CONSOLE)
   // --------------------------------------------------------------------------
+  /**
+   * Ejecuta pruebas funcionales y de integridad en vivo directamente en el DOM
+   * @returns {Object} Resumen estadístico de las pruebas
+   */
+  function runTests() {
+    const results = [];
+    const tStart = performance.now();
+
+    function assert(name, condition, detail = '') {
+      results.push({ name, pass: Boolean(condition), detail });
+    }
+
+    // 1. Integridad de catálogo
+    assert('Catálogo base cargado', PRODUCTS.length >= 8, `Total: ${PRODUCTS.length} piezas`);
+    assert('Catálogo congelado contra manipulaciones (Anti-Tampering)', Object.isFrozen(PRODUCTS[0]));
+    assert('Precios numéricos válidos en catálogo', PRODUCTS.every(p => typeof p.price === 'number' && p.price > 500000));
+
+    // 2. Elementos DOM esenciales
+    assert('Grid de catálogo presente en DOM', Boolean(elements.catalogGrid));
+    assert('Drawer de carrito presente en DOM', Boolean(elements.cartDrawer));
+    assert('Drawer de favoritos presente en DOM', Boolean(elements.favoritesDrawer));
+    assert('Contenedor de toasts presente en DOM', Boolean(elements.toastContainer));
+    assert('Campo Honeypot anti-spam presente', Boolean(elements.newsletterHp));
+
+    // 3. Seguridad y Sanitización
+    const safeEscaped = Security.escapeHTML('<script>alert("xss")</script>');
+    assert('escapeHTML neutraliza scripts XSS', safeEscaped === '&lt;script&gt;alert(&quot;xss&quot;)&lt;&#x2F;script&gt;');
+    assert('isValidEmail acepta correos válidos', Security.isValidEmail('soporte@relojnori.com'));
+    assert('isValidEmail rechaza correos maliciosos', !Security.isValidEmail('bad@spam\r\nBcc:foo@bar.com'));
+
+    // 4. Carrito e integridad de datos
+    const sanitizedCart = Security.sanitizeCart([{ id: 1, quantity: 9999 }, { id: -1, quantity: 2 }]);
+    assert('sanitizeCart normaliza límites de cantidad a máx 50', sanitizedCart.length === 1 && sanitizedCart[0].quantity === 50);
+
+    // 5. Open Graph Manager
+    assert('OpenGraphManager disponible', typeof OpenGraphManager.setProduct === 'function');
+
+    // 6. Almacenamiento seguro
+    let storageWorking = false;
+    try {
+      localStorage.setItem('relojnori_test_probe', 'ok');
+      storageWorking = localStorage.getItem('relojnori_test_probe') === 'ok';
+      localStorage.removeItem('relojnori_test_probe');
+    } catch (e) {
+      storageWorking = false;
+    }
+    assert('Persistencia localStorage operativa', storageWorking);
+
+    const elapsed = Math.round(performance.now() - tStart);
+    const passed = results.filter(r => r.pass).length;
+    const failed = results.filter(r => !r.pass).length;
+
+    console.log('%c[RELOJNORI QA] Ejecución de Pruebas en Vivo:', 'color:#d4af37; font-weight:bold; font-size:14px;');
+    console.table(results);
+    console.log(`%cResultado: ${passed}/${results.length} PASADAS (${elapsed}ms)`, passed === results.length ? 'color:#10b981; font-weight:bold;' : 'color:#ef4444; font-weight:bold;');
+
+    // Generar reporte HTML para el modal
+    const rows = results.map(r => `
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:13px;">
+        <span style="color:${r.pass ? '#10b981' : '#ef4444'}; font-weight:700; width:65px;">${r.pass ? '✔ PASS' : '✖ FAIL'}</span>
+        <span style="flex:1; text-align:left; color:#f0f3f8;">${Security.escapeHTML(r.name)}</span>
+        <span style="font-size:11px; color:#8b9bb4; font-family:monospace;">${Security.escapeHTML(r.detail)}</span>
+      </div>
+    `).join('');
+
+    const modalBodyHtml = `
+      <div style="padding:10px 0;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:16px; background:#121620; padding:12px 16px; border-radius:8px; border:1px solid #232b3e;">
+          <div><strong style="color:#d4af37;">Total:</strong> ${results.length}</div>
+          <div><strong style="color:#10b981;">Aprobadas:</strong> ${passed}</div>
+          <div><strong style="color:#ef4444;">Fallidas:</strong> ${failed}</div>
+          <div><strong style="color:#8b9bb4;">Tiempo:</strong> ${elapsed}ms</div>
+        </div>
+        <div style="max-height:280px; overflow-y:auto;">${rows}</div>
+        <div style="margin-top:16px; text-align:center;">
+          <a href="test_suite.html" target="_blank" rel="noopener noreferrer" style="color:#f3e5ab; text-decoration:underline; font-size:12px;">
+            Abrir Consola de Pruebas Completa (test_suite.html) →
+          </a>
+        </div>
+      </div>
+    `;
+
+    showModal("Reporte de Auditoría QA en Vivo", modalBodyHtml);
+    return { total: results.length, passed, failed, elapsed, results };
+  }
+
+  // --------------------------------------------------------------------------
+  // 13. INICIALIZACIÓN DE LA APLICACIÓN Y ROUTING OPEN GRAPH
+  // --------------------------------------------------------------------------
+  function checkHashRoute() {
+    const hash = window.location.hash;
+    const match = hash.match(/#producto-(\d+)/);
+    if (match && match[1]) {
+      openQuickView(match[1]);
+    }
+  }
+
   function init() {
+    Security.freezeCatalog(PRODUCTS);
     initLocalStorage();
     renderProducts();
     renderCart();
     updateFavoritesBadges();
     setupEventListeners();
+    checkHashRoute();
+    window.addEventListener('hashchange', checkHashRoute);
   }
 
   // Exponer funciones en el ámbito global window para RelojNori y compatibilidad
@@ -3853,11 +6511,16 @@ ul, ol {
     openFavorites,
     closeFavorites,
     openQuickView,
-    closeQuickView
+    closeQuickView,
+    OpenGraphManager,
+    addProduct,
+    Security,
+    runTests,
+    shareProduct: OpenGraphManager.share.bind(OpenGraphManager)
   };
   window.NORDI = window.RELOJNORI;
 
-  // Asignar funciones globales según se especifica en la sección 6
+  // Asignar funciones globales según se especifica en la especificación técnica
   window.renderProducts = renderProducts;
   window.addToCart = addToCart;
   window.renderCart = renderCart;
@@ -3866,6 +6529,10 @@ ul, ol {
   window.closeCart = closeCart;
   window.showToast = showToast;
   window.showModal = showModal;
+  window.OpenGraphManager = OpenGraphManager;
+  window.addProduct = addProduct;
+  window.Security = Security;
+  window.runTests = runTests;
 
   // Arrancar cuando el DOM esté listo
   if (document.readyState === 'loading') {
@@ -3876,5 +6543,531 @@ ul, ol {
 })();
 
 </script>
+
+  <!-- ======================================================================
+       DATOS ESTRUCTURADOS JSON-LD — SEO-GEO + AEO
+       Schema.org: Organization, LocalBusiness, WebSite, BreadcrumbList,
+                   ItemList, Product, FAQPage
+       ====================================================================== -->
+
+  <!-- 1. ORGANIZATION SCHEMA — Identidad corporativa global -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.relojnori.com/#organization",
+    "name": "RelojNori Horlogerie",
+    "alternateName": ["RelojNori", "Reloj Nori", "RelojNori Colombia"],
+    "url": "https://www.relojnori.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.relojnori.com/assets/logo-relojnori.svg",
+      "width": 300,
+      "height": 80
+    },
+    "image": "https://www.relojnori.com/assets/og-relojnori-share.jpg",
+    "description": "Relojería contemporánea y minimalista. Diseñamos piezas de relojería con cristal de zafiro, acero quirúrgico 316L y calibres de alta precisión. Tienda oficial con sede en Bogotá, Colombia.",
+    "foundingDate": "2020",
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Bogotá D.C., Colombia"
+    },
+    "slogan": "Relojes con carácter",
+    "email": "soporte@relojnori.com",
+    "telephone": "+57-601-390-4488",
+    "sameAs": [
+      "https://www.instagram.com/relojnori",
+      "https://www.facebook.com/relojnori",
+      "https://www.pinterest.com/relojnori",
+      "https://www.tiktok.com/@relojnori",
+      "https://www.youtube.com/@relojnori"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle 85 # 11-53",
+      "addressLocality": "Bogotá D.C.",
+      "addressRegion": "Cundinamarca",
+      "postalCode": "110221",
+      "addressCountry": {
+        "@type": "Country",
+        "name": "CO"
+      }
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+57-601-390-4488",
+        "contactType": "customer service",
+        "areaServed": "CO",
+        "availableLanguage": ["Spanish", "English"],
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      },
+      {
+        "@type": "ContactPoint",
+        "email": "soporte@relojnori.com",
+        "contactType": "sales",
+        "areaServed": "CO",
+        "availableLanguage": "Spanish"
+      }
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Colombia"
+    }
+  }
+  </script>
+
+  <!-- 2. LOCAL BUSINESS SCHEMA — SEO-GEO con coordenadas y horarios -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["JewelryStore", "Store", "LocalBusiness"],
+    "@id": "https://www.relojnori.com/#localbusiness",
+    "name": "RelojNori Horlogerie — Sala de Ventas Zona Rosa",
+    "alternateName": "RelojNori Bogotá",
+    "description": "Sala de ventas y experiencia de relojería contemporánea en la Zona Rosa de Bogotá. Asesoría personalizada, garantía de 2 años y envío asegurado a toda Colombia.",
+    "url": "https://www.relojnori.com",
+    "telephone": "+57-601-390-4488",
+    "email": "soporte@relojnori.com",
+    "image": "https://www.relojnori.com/assets/tienda-zona-rosa-bogota.jpg",
+    "priceRange": "$$$ - $$$$",
+    "currenciesAccepted": "COP",
+    "paymentAccepted": "Efectivo, Tarjeta de Crédito, Tarjeta Débito, Transferencia Bancaria, PSE, Nequi, Daviplata",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle 85 # 11-53",
+      "addressLocality": "Bogotá D.C.",
+      "addressRegion": "Cundinamarca",
+      "postalCode": "110221",
+      "addressCountry": "CO",
+      "addressNeighborhood": "Zona Rosa"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 4.6688,
+      "longitude": -74.0565
+    },
+    "hasMap": "https://www.google.com/maps?q=4.6688,-74.0565",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "10:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "10:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "00:00",
+        "closes": "00:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "ratingCount": "347",
+      "reviewCount": "189"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Camilo R." },
+        "datePublished": "2026-09-15",
+        "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
+        "reviewBody": "Excelente calidad y atención. Mi RelojNori Heritage Automatic es una pieza espectacular, el acabado es impecable."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "María L." },
+        "datePublished": "2026-08-22",
+        "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
+        "reviewBody": "Envío rápido a Medellín y el reloj llegó en una caja de presentación hermosa. La garantía de 2 años me da mucha tranquilidad."
+      }
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Bogotá" },
+      { "@type": "City", "name": "Medellín" },
+      { "@type": "City", "name": "Cali" },
+      { "@type": "City", "name": "Barranquilla" },
+      { "@type": "City", "name": "Cartagena" },
+      { "@type": "City", "name": "Bucaramanga" },
+      { "@type": "Country", "name": "Colombia" }
+    ],
+    "isAccessibleForFree": true,
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Catálogo de Relojes RelojNori 2026",
+      "itemListElement": [
+        { "@type": "OfferCatalog", "name": "Relojes Clásicos" },
+        { "@type": "OfferCatalog", "name": "Relojes Deportivos" },
+        { "@type": "OfferCatalog", "name": "Relojes Minimalistas" },
+        { "@type": "OfferCatalog", "name": "Relojes Elegantes" }
+      ]
+    }
+  }
+  </script>
+
+  <!-- 3. WEBSITE SCHEMA — Sitio web con SearchAction para Google Sitelinks -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.relojnori.com/#website",
+    "name": "RelojNori",
+    "alternateName": "RelojNori Horlogerie",
+    "url": "https://www.relojnori.com",
+    "description": "Tienda oficial de relojería contemporánea con envío a toda Colombia",
+    "publisher": { "@id": "https://www.relojnori.com/#organization" },
+    "inLanguage": "es-CO",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.relojnori.com/buscar?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "copyrightYear": 2026,
+    "copyrightHolder": { "@id": "https://www.relojnori.com/#organization" }
+  }
+  </script>
+
+  <!-- 4. WEBPAGE SCHEMA — Página principal con Speakable (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.relojnori.com/#webpage",
+    "name": "RelojNori — Relojes con Carácter | Tienda Oficial Colombia",
+    "url": "https://www.relojnori.com/",
+    "description": "Tienda oficial de relojes contemporáneos con cristal de zafiro y acero quirúrgico 316L. Envío asegurado a toda Colombia.",
+    "isPartOf": { "@id": "https://www.relojnori.com/#website" },
+    "about": { "@id": "https://www.relojnori.com/#organization" },
+    "inLanguage": "es-CO",
+    "datePublished": "2026-01-15",
+    "dateModified": "2026-10-24",
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.relojnori.com/assets/og-relojnori-share.jpg"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero-title", ".hero-description", ".editorial-quote", ".section-title"]
+    },
+    "mainEntity": { "@id": "https://www.relojnori.com/#itemlist" }
+  }
+  </script>
+
+  <!-- 5. BREADCRUMB SCHEMA — Navegación estructurada -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.relojnori.com/#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://www.relojnori.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Catálogo de Relojes",
+        "item": "https://www.relojnori.com/#catalogo"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Nuestra Esencia",
+        "item": "https://www.relojnori.com/#nosotros"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Novedades",
+        "item": "https://www.relojnori.com/#novedades"
+      }
+    ]
+  }
+  </script>
+
+  <!-- 6. ITEM LIST SCHEMA — Catálogo de productos con precios (AEO + Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://www.relojnori.com/#itemlist",
+    "name": "Colección de Relojes RelojNori 2026",
+    "description": "Catálogo exclusivo de relojes de diseño contemporáneo con envío a toda Colombia",
+    "numberOfItems": 8,
+    "itemListOrder": "https://schema.org/ItemListOrderDescending",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "@id": "https://www.relojnori.com/producto/chrono-diver-300",
+          "name": "RelojNori Chrono Diver 300",
+          "description": "Cronógrafo sumergible con bisel cerámico unidireccional, pulsadores estancos y luminiscencia de alta visibilidad. Caja de acero 316L satinado de 42 mm con cristal de zafiro antirreflejo doble.",
+          "image": "https://images.unsplash.com/photo-1547996160-71dfabb1a9b1?auto=format&fit=crop&w=800&q=80",
+          "category": "Relojes Deportivos",
+          "brand": { "@type": "Brand", "name": "RelojNori" },
+          "sku": "RN-CD300-2026",
+          "gtin13": "7701234567890",
+          "material": "Acero Quirúrgico 316L",
+          "color": "Plateado / Negro",
+          "offers": {
+            "@type": "Offer",
+            "url": "https://www.relojnori.com/producto/chrono-diver-300",
+            "priceCurrency": "COP",
+            "price": 1450000,
+            "priceValidUntil": "2027-03-31",
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition",
+            "seller": { "@id": "https://www.relojnori.com/#organization" },
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": { "@type": "MonetaryAmount", "value": 0, "currency": "COP" },
+              "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "CO" },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "d" },
+                "transitTime": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "d" }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+              "merchantReturnDays": 30,
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn"
+            }
+          },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": 4.9, "reviewCount": 42, "bestRating": 5 },
+          "additionalProperty": [
+            { "@type": "PropertyValue", "name": "Diámetro", "value": "42 mm" },
+            { "@type": "PropertyValue", "name": "Resistencia al agua", "value": "300 metros / 30 ATM" },
+            { "@type": "PropertyValue", "name": "Cristal", "value": "Zafiro antirreflejo doble" },
+            { "@type": "PropertyValue", "name": "Mecanismo", "value": "Calibre Cuarzo Mecha-Chrono" },
+            { "@type": "PropertyValue", "name": "Garantía", "value": "2 años" }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "RelojNori Stella Minimal Gold",
+          "description": "Esfera depurada en oro cálido con manecillas tipo aguja y correa de cuero italiano. Caja de 38 mm con PVD dorado y cristal de zafiro ultraplano.",
+          "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+          "category": "Relojes Minimalistas",
+          "brand": { "@type": "Brand", "name": "RelojNori" },
+          "sku": "RN-SMG-2026",
+          "offers": { "@type": "Offer", "priceCurrency": "COP", "price": 980000, "availability": "https://schema.org/InStock" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "RelojNori Heritage Automatic",
+          "description": "Elegancia atemporal con dial marfil texturizado. Automático de 24 rubíes con 41 horas de reserva de marcha. Edición limitada 2026.",
+          "image": "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80",
+          "category": "Relojes Clásicos",
+          "brand": { "@type": "Brand", "name": "RelojNori" },
+          "sku": "RN-HA-2026",
+          "offers": { "@type": "Offer", "priceCurrency": "COP", "price": 1890000, "availability": "https://schema.org/LimitedAvailability" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Product",
+          "name": "RelojNori Midnight Obsidian",
+          "description": "Silueta monolítica monocromática en negro carbón con acabados cepillados a mano. Malla milanesa de acero negro mate y cristal zafiro ahumado.",
+          "image": "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=800&q=80",
+          "category": "Relojes Elegantes",
+          "brand": { "@type": "Brand", "name": "RelojNori" },
+          "sku": "RN-MO-2026",
+          "offers": { "@type": "Offer", "priceCurrency": "COP", "price": 1320000, "availability": "https://schema.org/InStock" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Product",
+          "name": "RelojNori Aero Racing GMT",
+          "description": "Doble huso horario GMT con bisel bicolor, aguja roja de 24 horas y brazalete sólido. Para viajeros intrépidos.",
+          "image": "https://images.unsplash.com/photo-1526045431048-f857369baa09?auto=format&fit=crop&w=800&q=80",
+          "category": "Relojes Deportivos",
+          "brand": { "@type": "Brand", "name": "RelojNori" },
+          "sku": "RN-ARGMT-2026",
+          "offers": { "@type": "Offer", "priceCurrency": "COP", "price": 1650000, "availability": "https://schema.org/InStock" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Product",
+          "name": "RelojNori Bauhaus Mono",
+          "description": "Diseño funcionalista Bauhaus con índices milimétricos limpios y caja ultra delgada de solo 7.2 mm. Cuero negro mate de curtido orgánico.",
+          "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+          "category": "Relojes Minimalistas",
+          "brand": { "@type": "Brand", "name": "RelojNori" },
+          "sku": "RN-BM-2026",
+          "offers": { "@type": "Offer", "priceCurrency": "COP", "price": 890000, "availability": "https://schema.org/InStock" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "Product",
+          "name": "RelojNori Grand Classic Vintage",
+          "description": "Tributo a la relojería clásica con baño de oro amarillo 18k, agujas dauphine facetadas y mecanismo de cuerda manual con 48 horas de reserva.",
+          "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=800&q=80",
+          "category": "Relojes Clásicos",
+          "brand": { "@type": "Brand", "name": "RelojNori" },
+          "sku": "RN-GCV-2026",
+          "offers": { "@type": "Offer", "priceCurrency": "COP", "price": 2100000, "availability": "https://schema.org/LimitedAvailability" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "Product",
+          "name": "RelojNori Royale Skeleton Dial",
+          "description": "Esfera esqueletizada que expone el movimiento mecánico palpitante y el volante oscilante. Doble cristal de zafiro frontal y trasero.",
+          "image": "https://images.unsplash.com/photo-1511370235399-1802cae1d32f?auto=format&fit=crop&w=800&q=80",
+          "category": "Relojes Elegantes",
+          "brand": { "@type": "Brand", "name": "RelojNori" },
+          "sku": "RN-RSD-2026",
+          "offers": { "@type": "Offer", "priceCurrency": "COP", "price": 2480000, "availability": "https://schema.org/InStock" }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- 7. FAQ SCHEMA — AEO: Respuestas para asistentes de voz, Google SGE y snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.relojnori.com/#faq",
+    "name": "Preguntas Frecuentes sobre RelojNori",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es RelojNori y dónde queda su tienda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RelojNori es una marca colombiana de relojería contemporánea y minimalista fundada en Bogotá. Su sala de ventas principal está ubicada en la Calle 85 # 11-53, Zona Rosa, Bogotá D.C., Colombia. Atienden de lunes a viernes de 10:00 AM a 7:00 PM y sábados de 10:00 AM a 5:00 PM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuestan los relojes RelojNori?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los relojes RelojNori tienen precios desde $890.000 COP hasta $2.480.000 COP según el modelo y la colección. Todas las piezas incluyen cristal de zafiro, acero quirúrgico 316L y garantía oficial de 2 años. Los modelos más populares son el Bauhaus Mono ($890.000 COP), el Stella Minimal Gold ($980.000 COP) y el Chrono Diver 300 ($1.450.000 COP)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿RelojNori hace envíos a toda Colombia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, RelojNori ofrece envío asegurado y gratuito a todas las principales ciudades de Colombia, incluyendo Bogotá, Medellín, Cali, Barranquilla, Cartagena, Bucaramanga, Pereira y más. El tiempo de entrega es de 3 a 7 días hábiles dependiendo de la ciudad de destino. Todos los envíos incluyen seguro de transporte y empaque de presentación premium."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué garantía tienen los relojes RelojNori?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Todos los relojes RelojNori incluyen una garantía oficial de 2 años que cubre el mecanismo, empaques y componentes de manufactura. La garantía es válida en todo el territorio colombiano y se activa desde el momento de la compra. Para hacer efectiva la garantía, se debe presentar la factura de compra original."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿De qué materiales están hechos los relojes RelojNori?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los relojes RelojNori están fabricados con materiales de alta calidad: acero quirúrgico 316L hipoalergénico y resistente a la corrosión, cristal de zafiro con tratamiento antirreflejo (dureza 9 en escala de Mohs), y correas de cuero genuino curtido vegetal o mallas de acero inoxidable. Los mecanismos incluyen calibres de cuarzo de alta precisión y movimientos automáticos con reservas de marcha de hasta 48 horas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuáles son las colecciones de relojes disponibles en RelojNori?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RelojNori ofrece cuatro colecciones principales: Relojes Clásicos (Heritage Automatic y Grand Classic Vintage), Relojes Deportivos (Chrono Diver 300 y Aero Racing GMT), Relojes Minimalistas (Stella Minimal Gold y Bauhaus Mono), y Relojes Elegantes (Midnight Obsidian y Royale Skeleton Dial). Algunas piezas son de edición limitada y se agotan rápidamente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Los relojes RelojNori son resistentes al agua?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, todos los relojes RelojNori tienen resistencia al agua que varía según el modelo: desde 3 ATM (30 metros, salpicaduras y lluvia) en modelos ultra delgados como el Bauhaus Mono, hasta 30 ATM (300 metros, buceo recreativo) en el Chrono Diver 300. Los modelos elegantes y clásicos generalmente ofrecen 5 a 10 ATM (50-100 metros)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde puedo comprar un reloj RelojNori en Bogotá?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Puedes comprar un reloj RelojNori visitando su sala de ventas en la Zona Rosa de Bogotá (Calle 85 # 11-53) o a través de su tienda virtual en www.relojnori.com. En la sala de ventas recibes asesoría personalizada para elegir la pieza ideal. También puedes contactarlos al +57 (601) 390 4488 o al correo soporte@relojnori.com."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- 8. OFFER CATALOG SCHEMA — AEO: Rango de precios para featured snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AggregateOffer",
+    "@id": "https://www.relojnori.com/#aggregate-offer",
+    "priceCurrency": "COP",
+    "lowPrice": 890000,
+    "highPrice": 2480000,
+    "offerCount": 8,
+    "offers": [
+      { "@type": "Offer", "name": "RelojNori Bauhaus Mono", "price": 890000, "priceCurrency": "COP" },
+      { "@type": "Offer", "name": "RelojNori Stella Minimal Gold", "price": 980000, "priceCurrency": "COP" },
+      { "@type": "Offer", "name": "RelojNori Midnight Obsidian", "price": 1320000, "priceCurrency": "COP" },
+      { "@type": "Offer", "name": "RelojNori Chrono Diver 300", "price": 1450000, "priceCurrency": "COP" },
+      { "@type": "Offer", "name": "RelojNori Aero Racing GMT", "price": 1650000, "priceCurrency": "COP" },
+      { "@type": "Offer", "name": "RelojNori Heritage Automatic", "price": 1890000, "priceCurrency": "COP" },
+      { "@type": "Offer", "name": "RelojNori Grand Classic Vintage", "price": 2100000, "priceCurrency": "COP" },
+      { "@type": "Offer", "name": "RelojNori Royale Skeleton Dial", "price": 2480000, "priceCurrency": "COP" }
+    ]
+  }
+  </script>
+
 </body>
 </html>
